@@ -8,6 +8,7 @@ import "./i18n";
 
 import { initializeCartThunk } from "./thunkActionsCreator/cartThunks";
 import {
+  restoreSessionThunk,
   fetchCurrentUserThunk,
   fetchCurrentCustomerThunk,
   fetchCurrentUserOrdersThunk,
@@ -53,14 +54,23 @@ import AuthDrawer from "./components/AuthDrawer";
 import Checkout from "./pages/Checkout";
 
 async function initializeApp() {
+  // Ancien emplacement du JWT, avant son passage en cookie HttpOnly : on ne
+  // le laisse pas traîner jusqu'à son expiration.
+  localStorage.removeItem("wc_user_token");
+
   store.dispatch(initializeCartThunk());
   store.dispatch(fetchSiteThunk());
 
-  await store.dispatch(fetchSiteSettingsThunk()).catch(() => {
-    store.dispatch(setSiteSettings({}));
-  });
+  // Session restaurée avant le premier rendu : sans cela l'interface
+  // s'afficherait un instant comme pour un invité.
+  await Promise.all([
+    store.dispatch(fetchSiteSettingsThunk()).unwrap().catch(() => {
+      store.dispatch(setSiteSettings({}));
+    }),
+    store.dispatch(restoreSessionThunk()),
+  ]);
 
-  if (store.getState().user.token) {
+  if (store.getState().user.isAuthenticated) {
     store.dispatch(fetchCurrentUserThunk());
     store.dispatch(fetchCurrentCustomerThunk());
     store.dispatch(fetchCurrentUserOrdersThunk());

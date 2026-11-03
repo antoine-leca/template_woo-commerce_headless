@@ -14,7 +14,7 @@ export default function Cart() {
   const { t } = useTranslation();
   const items = useSelector((state) => state.cart.items);
   const totals = useSelector((state) => state.cart.totals);
-  const token = useSelector((state) => state.user.token);
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const [isCheckoutPromptOpen, setCheckoutPromptOpen] = useState(false);
   const closeCheckoutPrompt = useCallback(() => setCheckoutPromptOpen(false), []);
 
@@ -24,7 +24,7 @@ export default function Cart() {
   const handleCheckoutClick = (event) => {
     const isModifiedClick =
       event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
-    if (token || isModifiedClick) return;
+    if (isAuthenticated || isModifiedClick) return;
 
     event.preventDefault();
     setCheckoutPromptOpen(true);

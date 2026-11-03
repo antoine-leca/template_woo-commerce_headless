@@ -4,18 +4,17 @@ import {
   clearGuestWishlistStorage,
 } from "../utils/guestWishlist";
 import { apiError, apiErrorMessage } from "../i18n/apiError";
+import { withAuth } from "../utils/withAuth";
+
+const WISHLIST_URL = `${import.meta.env.VITE_API_URL}/wp-json/custom/v1/wishlist`;
+
+const csrfOf = (thunkAPI) => thunkAPI.getState().user.csrfToken;
 
 export const fetchWishlistThunk = createAsyncThunk(
   "wishlist/fetch",
   async (_, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().user.token;
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/wp-json/custom/v1/wishlist`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        },
-      );
+      const response = await fetch(WISHLIST_URL, withAuth(csrfOf(thunkAPI)));
       const data = await response.json();
       if (!response.ok) {
         throw new Error(apiErrorMessage(data.message, "errors.wishlistFetch"));
@@ -31,17 +30,13 @@ export const addToWishlistThunk = createAsyncThunk(
   "wishlist/add",
   async (productId, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().user.token;
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/wp-json/custom/v1/wishlist`,
-        {
+        WISHLIST_URL,
+        withAuth(csrfOf(thunkAPI), {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ productId }),
-        },
+        }),
       );
       const data = await response.json();
       if (!response.ok) {
@@ -62,29 +57,20 @@ export const mergeGuestWishlistThunk = createAsyncThunk(
   "wishlist/mergeGuest",
   async (_, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().user.token;
       const guestItems = readGuestWishlist();
 
       for (const item of guestItems) {
         await fetch(
-          `${import.meta.env.VITE_API_URL}/wp-json/custom/v1/wishlist`,
-          {
+          WISHLIST_URL,
+          withAuth(csrfOf(thunkAPI), {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ productId: item.id }),
-          },
+          }),
         );
       }
 
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/wp-json/custom/v1/wishlist`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        },
-      );
+      const response = await fetch(WISHLIST_URL, withAuth(csrfOf(thunkAPI)));
       const data = await response.json();
       if (!response.ok) {
         throw new Error(
@@ -104,17 +90,13 @@ export const removeFromWishlistThunk = createAsyncThunk(
   "wishlist/remove",
   async (productId, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().user.token;
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/wp-json/custom/v1/wishlist`,
-        {
+        WISHLIST_URL,
+        withAuth(csrfOf(thunkAPI), {
           method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ productId }),
-        },
+        }),
       );
       const data = await response.json();
       if (!response.ok) {

@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 export default function Wishlist() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const isAuthentificated = useSelector((state) => state.user?.token);
+  const isAuthentificated = useSelector((state) => state.user.isAuthenticated);
   const { items, loading } = useSelector((state) => state.wishlist);
 
   // Invite : items vient deja du localStorage (hydrate dans wishlistSlice),

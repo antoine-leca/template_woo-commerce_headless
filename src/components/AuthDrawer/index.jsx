@@ -48,7 +48,7 @@ export default function AuthDrawer() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isOpen, view, redirectTo } = useSelector((state) => state.authModal);
-  const { loading, token } = useSelector((state) => state.user);
+  const { loading, isAuthenticated } = useSelector((state) => state.user);
 
   const [mode, setMode] = useState("login");
   const [showPassword, setShowPassword] = useState(false);
@@ -89,7 +89,7 @@ export default function AuthDrawer() {
   };
 
   useEffect(() => {
-    if (token && justAuthenticated && isOpen) {
+    if (isAuthenticated && justAuthenticated && isOpen) {
       // Relevée avant la fermeture, qui efface la destination du store.
       const destination = redirectTo || "/profile";
       dispatch(closeAuthModal());
@@ -105,7 +105,7 @@ export default function AuthDrawer() {
       navigate(destination);
       setJustAuthenticated(false);
     }
-  }, [token, justAuthenticated, isOpen, redirectTo, dispatch, navigate]);
+  }, [isAuthenticated, justAuthenticated, isOpen, redirectTo, dispatch, navigate]);
 
   useEffect(() => {
     if (isOpen && view !== "reset-password") {

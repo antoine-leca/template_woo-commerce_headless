@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 export default function WishlistButton({ product }) {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.user.token);
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const isWishlisted = useSelector((state) =>
     state.wishlist.items.some((item) => item.id === product.id),
   );
@@ -26,7 +26,7 @@ export default function WishlistButton({ product }) {
     // Invite : pas de compte donc pas de user meta cote serveur. On garde la
     // wishlist en localStorage (cf. wishlistSlice) ; elle sera fusionnee dans
     // le compte a la connexion (cartIdentityListener).
-    if (!token) {
+    if (!isAuthenticated) {
       if (isWishlisted) {
         dispatch(removeLocalWishlistItem(product.id));
       } else {

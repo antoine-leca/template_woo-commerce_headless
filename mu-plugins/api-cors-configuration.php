@@ -49,3 +49,9 @@ add_filter('rest_allowed_cors_origins', function($origins) use ($allowed_origins
 
 // Ensure WordPress sends CORS headers
 add_filter('rest_send_cors_headers', '__return_true');
+
+// Anti-CSRF header sent alongside the HttpOnly auth cookie (auth-cookie.php)
+add_filter('rest_allowed_cors_headers', function($headers) {
+    $headers[] = 'X-CSRF-Token';
+    return $headers;
+});

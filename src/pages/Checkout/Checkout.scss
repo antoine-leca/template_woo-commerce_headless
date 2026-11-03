@@ -302,6 +302,202 @@ h3 {
   font-style: italic;
 }
 
+//mondial relay
+// Sélecteur de point relais Mondial Relay - Style Minimaliste
+.mr-selector {
+  margin: 20px 0 30px;
+  color: #000;
+
+  &__title {
+    margin: 0 0 15px;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  // --- Recherche ---
+  &__search {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000;
+    font-size: 14px;
+    outline: none;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    &:focus-visible {
+      border-width: 2px;
+      padding: 11px; // Compense la bordure plus épaisse
+    }
+  }
+
+  &__btn {
+    padding: 0 25px;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  // --- Erreur ---
+  &__error {
+    margin: 0 0 20px;
+    padding: 12px;
+    border: 1px solid #fa755a;
+    background-color: rgba(250, 117, 90, 0.05);
+    color: #fa755a;
+    font-size: 14px;
+  }
+
+  // --- Point relais choisi ---
+  &__selected {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #000;
+    background-color: transparent;
+    line-height: 1.6;
+
+    strong {
+      display: block;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  // --- Liste des résultats ---
+  &__list {
+    display: flex;
+    flex-direction: column;
+    max-height: 320px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.2); // Séparateur subtil
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); // Séparateur subtil
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+
+    &--selected {
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.04
+      ); // Léger voile sombre pour marquer la sélection
+      padding-left: 15px;
+      padding-right: 15px;
+      border-bottom-color: transparent;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__address {
+    color: rgba(0, 0, 0, 0.75); // Noir légèrement transparent
+    font-size: 13px;
+  }
+
+  &__choose {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &--selected {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+
+  // --- Mobile ---
+  @media (max-width: 600px) {
+    &__search {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    &__btn {
+      padding: 15px 24px;
+    }
+
+    &__item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    &__choose {
+      width: 100%;
+    }
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 900px) {
   .checkout-container {

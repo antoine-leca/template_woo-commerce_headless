@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../../../slices/userSlice";
+import { logoutThunk } from "../../../thunkActionsCreator/userThunks";
 import { showToast } from "../../../slices/toastSlice";
 import { useTranslation } from "react-i18next";
 
@@ -22,10 +22,10 @@ export default function ProfileNavigation({ activeTab, onTabChange }) {
   ];
 
   // La barre du header n'expose plus de menu : c'est ici que la déconnexion
-  // se fait désormais. `logout` vide aussi le jeton de panier invité, via
+  // se fait désormais. `logoutThunk` vide aussi le jeton de panier invité, via
   // l'écouteur du store — la session suivante repart d'un panier propre.
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logoutThunk());
     dispatch(showToast(t("account.loggedOut")));
     navigate("/");
   };

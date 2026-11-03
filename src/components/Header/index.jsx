@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFilters } from "../../slices/filtersSlice";
 import { useNavigate } from "react-router-dom";
 import Autocomplete from "../Autocomplete";
-import { logout } from "../../slices/userSlice";
+import { logoutThunk } from "../../thunkActionsCreator/userThunks";
 import { openAuthModal } from "../../slices/authModalSlice";
 import menuBurgerIcon from "../../assets/icons/menu-burger.png";
 import searchBarIcon from "../../assets/icons/search-bar.png";
@@ -14,16 +14,13 @@ import cartIcon from "../../assets/icons/logo-panier.png";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
-  const token = useSelector((state) => state.user.token);
   const cartItems = useSelector((state) => state.cart.items);
   const wishlistItems = useSelector((state) => state.wishlist.items);
   const siteSettings = useSelector((state) => state.site.siteSettings);
   const siteLogo = siteSettings?.siteLogo;
   const dispatch = useDispatch();
 
-  console.log("🎨 Header - siteSettings:", siteSettings);
-  console.log("🎨 Header - siteLogo:", siteLogo);
-  const isAuthentificated = useSelector((state) => state.user?.token);
+  const isAuthentificated = useSelector((state) => state.user.isAuthenticated);
   const cartCount = cartItems.reduce(
     (total, item) => total + (Number(item.quantity) || 0),
     0,
@@ -114,7 +111,7 @@ export default function Header() {
                       type="button"
                       className="dropdown-item logout-btn"
                       onClick={() => {
-                        dispatch(logout());
+                        dispatch(logoutThunk());
                         setUserMenuOpen(false);
                       }}
                     >

@@ -1,20 +1,24 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setCart, setNonce, setCartToken } from "../slices/cartSlice";
 import { apiError, apiErrorMessage } from "../i18n/apiError";
+import { withAuth } from "../utils/withAuth";
 
 // Le Cart-Token porte la session panier de l'invité : le front et WooCommerce
-// étant sur deux origines différentes, aucun cookie de session ne circule et
-// une requête sans ce jeton repart systématiquement sur un panier vide.
-const buildCartHeaders = (thunkAPI) => {
+// étant sur deux origines différentes, aucun cookie de session WooCommerce ne
+// circule et une requête sans ce jeton repart systématiquement sur un panier
+// vide. Le cookie d'authentification (withAuth), lui, rattache le panier au
+// compte connecté.
+const cartRequest = (thunkAPI, init = {}) => {
   const { nonce, cartToken } = thunkAPI.getState().cart;
-  const token = thunkAPI.getState().user.token;
 
-  return {
-    "Content-Type": "application/json",
-    ...(nonce && { Nonce: nonce }),
-    ...(cartToken && { "Cart-Token": cartToken }),
-    ...(token && { Authorization: `Bearer ${token}` }),
-  };
+  return withAuth(thunkAPI.getState().user.csrfToken, {
+    ...init,
+    headers: {
+      "Content-Type": "application/json",
+      ...(nonce && { Nonce: nonce }),
+      ...(cartToken && { "Cart-Token": cartToken }),
+    },
+  });
 };
 
 // WooCommerce fait tourner ces jetons à chaque réponse : on rejoue toujours
@@ -48,9 +52,7 @@ export const initializeCartThunk = createAsyncThunk(
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/cart`,
-        {
-          headers: buildCartHeaders(thunkAPI),
-        },
+        cartRequest(thunkAPI),
       );
 
       await assertCartResponse(
@@ -75,10 +77,9 @@ export const emptyCartThunk = createAsyncThunk(
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/cart/items`,
-        {
+        cartRequest(thunkAPI, {
           method: "DELETE",
-          headers: buildCartHeaders(thunkAPI),
-        },
+        }),
       );
 
       await assertCartResponse(response, apiError("errors.cartEmpty"));
@@ -108,15 +109,14 @@ export const addProductToCart = createAsyncThunk(
 
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/cart/add-item`,
-        {
+        cartRequest(thunkAPI, {
           method: "POST",
-          headers: buildCartHeaders(thunkAPI),
           body: JSON.stringify({
             id: productId,
             quantity,
             variation: variationData,
           }),
-        },
+        }),
       );
 
       await assertCartResponse(
@@ -141,11 +141,10 @@ export const deleteProductFromCart = createAsyncThunk(
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/cart/remove-item`,
-        {
+        cartRequest(thunkAPI, {
           method: "POST",
-          headers: buildCartHeaders(thunkAPI),
           body: JSON.stringify({ key: itemKey }),
-        },
+        }),
       );
 
       await assertCartResponse(
@@ -167,11 +166,10 @@ export const deleteProductFromCart = createAsyncThunk(
 const couponFetch = (endpoint, code, thunkAPI) =>
   fetch(
     `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/cart/${endpoint}`,
-    {
+    cartRequest(thunkAPI, {
       method: "POST",
-      headers: buildCartHeaders(thunkAPI),
       body: JSON.stringify({ code }),
-    },
+    }),
   );
 
 export const applyCouponThunk = createAsyncThunk(
@@ -207,14 +205,13 @@ export const incrementProductInCart = createAsyncThunk(
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/cart/update-item`,
-        {
+        cartRequest(thunkAPI, {
           method: "POST",
-          headers: buildCartHeaders(thunkAPI),
           body: JSON.stringify({
             key: itemKey,
             quantity: quantity + 1,
           }),
-        },
+        }),
       );
 
       await assertCartResponse(response, apiError("errors.cartUpdate"));
@@ -244,11 +241,10 @@ export const substractProductFromCart = createAsyncThunk(
 
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/cart/${endpoint}`,
-        {
+        cartRequest(thunkAPI, {
           method: "POST",
-          headers: buildCartHeaders(thunkAPI),
           body: JSON.stringify(payload),
-        },
+        }),
       );
 
       await assertCartResponse(response, apiError("errors.cartUpdate"));

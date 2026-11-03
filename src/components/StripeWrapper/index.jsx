@@ -5,7 +5,7 @@ import CheckoutForm from "../CheckoutForm";
 import Loader from "../Loader";
 import { useTranslation } from "react-i18next";
 
-export default function StripeWrapper({ shippingAddress }) {
+export default function StripeWrapper({ children }) {
   const { t } = useTranslation();
   const [stripePromise, setStripePromise] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -19,9 +19,7 @@ export default function StripeWrapper({ shippingAddress }) {
         );
         const data = await response.json();
         if (!response.ok || !data.publishable_key) {
-          throw new Error(
-            data.message || t("payment.keyError"),
-          );
+          throw new Error(data.message || t("payment.keyError"));
         }
         setStripePromise(loadStripe(data.publishable_key));
       } catch (err) {
@@ -41,9 +39,5 @@ export default function StripeWrapper({ shippingAddress }) {
   if (error || !stripePromise) {
     return <p>{error || t("payment.initError")}</p>;
   }
-  return (
-    <Elements stripe={stripePromise}>
-      <CheckoutForm shippingAddress={shippingAddress} />
-    </Elements>
-  );
+  return <Elements stripe={stripePromise}>{children}</Elements>;
 }

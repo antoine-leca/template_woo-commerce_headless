@@ -57,6 +57,11 @@ function headless_delete_current_user($request)
         return new WP_Error('delete_failed', 'Impossible de supprimer le compte utilisateur.', ['status' => 500]);
     }
 
+    // Le cookie d'authentification désigne un compte qui n'existe plus
+    if (function_exists('headless_auth_clear_cookie')) {
+        headless_auth_clear_cookie();
+    }
+
     return rest_ensure_response([
         'success' => true,
         'message' => 'Le compte utilisateur a été supprimé. Les commandes sont conservées de façon anonymisée pour les obligations comptables.',

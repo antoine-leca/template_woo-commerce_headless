@@ -3,15 +3,15 @@ import {
   loginThunk,
   registerThunk,
   deleteCurrentUserThunk,
+  logoutThunk,
 } from "../thunkActionsCreator/userThunks";
 import { initializeCartThunk } from "../thunkActionsCreator/cartThunks";
 import { mergeGuestWishlistThunk } from "../thunkActionsCreator/wishlistThunks";
-import { logout } from "../slices/userSlice";
 import { setCartToken } from "../slices/cartSlice";
 import { resetToGuestWishlist } from "../slices/wishlistSlice";
 
 // Le nonce Store API est lie a l'identite (invite vs client connecte via le
-// token JWT). Quand cette identite change, on redemande un panier/nonce frais
+// cookie JWT). Quand cette identite change, on redemande un panier/nonce frais
 // plutot que de garder celui de l'ancienne identite en memoire/localStorage.
 // La wishlist invite vit en localStorage (pas de session cote WooCommerce
 // comme pour le panier) : a la connexion on la fusionne dans le compte, a la
@@ -22,7 +22,8 @@ import { resetToGuestWishlist } from "../slices/wishlistSlice";
 export const cartIdentityListener = createListenerMiddleware();
 
 const endsSession = (action) =>
-  logout.match(action) || deleteCurrentUserThunk.fulfilled.match(action);
+  logoutThunk.fulfilled.match(action) ||
+  deleteCurrentUserThunk.fulfilled.match(action);
 
 cartIdentityListener.startListening({
   matcher: (action) =>

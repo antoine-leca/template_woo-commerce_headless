@@ -1,5 +1,4 @@
 node_modules
-package-lock.json
 dist
 
 # WordPress plugins (managed by wp-cli, except mu-plugins)

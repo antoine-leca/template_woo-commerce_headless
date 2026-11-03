@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 export default function Footer() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const isAuthentificated = !!useSelector((state) => state.user?.token);
+  const isAuthentificated = !!useSelector((state) => state.user.isAuthenticated);
 
   return (
     <footer className="footer">

@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import SucessMessage from "../SucessMessage";
 import { formatAmount } from "../../utils/formatPrice";
+import { withAuth } from "../../utils/withAuth";
 import { useTranslation } from "react-i18next";
 
 const ordersCache = {};
 
 export default function OrderDetails({ order = null, orderId = null }) {
   const { t } = useTranslation();
-  const token = useSelector((state) => state.user.token);
+  const csrfToken = useSelector((state) => state.user.csrfToken);
 
   const [detail, setDetail] = useState(
     orderId ? ordersCache[orderId] : null
@@ -30,11 +31,7 @@ export default function OrderDetails({ order = null, orderId = null }) {
       try {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/order/${orderId}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
+          withAuth(csrfToken)
         );
 
         const data = await response.json();
@@ -59,7 +56,7 @@ export default function OrderDetails({ order = null, orderId = null }) {
     fetchOrder();
 
     return () => (cancelled = true);
-  }, [order, orderId, token]);
+  }, [order, orderId, csrfToken]);
 
   const current = detail || order;
 

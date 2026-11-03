@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Loader from "../Loader";
 import "./index.css";
 import { formatDate } from "../../utils/formatDate";
+import { withAuth } from "../../utils/withAuth";
 import { useTranslation } from "react-i18next";
 
 const Review = ({ productId }) => {
@@ -10,7 +11,7 @@ const Review = ({ productId }) => {
   const userState = useSelector((state) => state.user || {});
 
   const user = userState.profile || userState.customer || null;
-  const token = userState.token || localStorage.getItem("wc_user_token");
+  const csrfToken = userState.csrfToken;
   const userOrders = useSelector((state) => state.user?.orders ?? []);
 
   // États pour les avis
@@ -116,11 +117,7 @@ const Review = ({ productId }) => {
         // 2. Option B : Appel API WooCommerce si aucune commande n’est déjà chargée
         const response = await fetch(
           `${baseUrl}/wp-json/wc/v3/orders?customer=${user?.id}&status=completed`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          },
+          withAuth(csrfToken),
         );
 
         if (response.ok) {
@@ -158,7 +155,7 @@ const Review = ({ productId }) => {
     };
 
     checkPurchase();
-  }, [user, productId, userOrders, token, baseUrl]);
+  }, [user, productId, userOrders, csrfToken, baseUrl]);
 
   // --- Soumission d'un avis ---
   const handleSubmitReview = async (e) => {
@@ -172,12 +169,9 @@ const Review = ({ productId }) => {
     try {
       const response = await fetch(
         `${baseUrl}/wp-json/wc/v3/products/reviews`,
-        {
+        withAuth(csrfToken, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             product_id: productId,
             review: comment,
@@ -185,7 +179,7 @@ const Review = ({ productId }) => {
             reviewer_email: user?.email,
             rating: rating,
           }),
-        },
+        }),
       );
 
       if (!response.ok) {

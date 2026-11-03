@@ -55,8 +55,6 @@ export default function Feed() {
     }
   };
 
-  console.log("PRODUCST: ", items);
-
   return (
     <div className="feed-container">
       <span ref={feedContainerRef}></span>

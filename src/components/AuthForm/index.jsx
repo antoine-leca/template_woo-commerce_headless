@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 export default function AuthForm() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { loading, error, token } = useSelector((state) => state.user);
+  const { loading, error, isAuthenticated } = useSelector((state) => state.user);
   const [mode, setMode] = useState("login");
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
@@ -31,8 +31,8 @@ export default function AuthForm() {
   const isLogin = mode === "login";
 
   useEffect(() => {
-    if (token) dispatch(closeAuthModal());
-  }, [dispatch, token]);
+    if (isAuthenticated) dispatch(closeAuthModal());
+  }, [dispatch, isAuthenticated]);
 
   useEffect(() => {
     dispatch(showToast(error));

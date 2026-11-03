@@ -152,15 +152,30 @@
     "errors": {
       "cardField": "Le champ de carte est introuvable.",
       "cardOnly": "Seul le paiement par carte est actuellement disponible.",
-      "notCreated": "Commande non créée.",
-      "order": "La commande n'a pas pu être enregistrée."
+      "fillRequired": "Veuillez remplir tous les champs obligatoires signalés en rouge.",
+      "invalidEmail": "E-mail invalide",
+      "required": "Requis",
+      "selectRelay": "Veuillez sélectionner un point relais."
+    },
+    "mondialRelay": {
+      "choose": "Choisir",
+      "cityPlaceholder": "Ville (facultatif)",
+      "errors": {
+        "none": "Aucun point relais trouvé pour ce code postal.",
+        "postalRequired": "Veuillez saisir un code postal."
+      },
+      "postalPlaceholder": "Code postal (ex : 13001)",
+      "search": "Rechercher",
+      "searching": "Recherche…",
+      "selected": "Sélectionné ✓",
+      "selectedTitle": "Point relais sélectionné :",
+      "title": "Choisir un point relais"
     },
     "orContinue": "Ou continuer ci-dessous",
     "paymentDetails": "Détails du paiement",
-    "shippingExpress": "Chronopost (express 24 h)",
+    "shippingHome": "Mondial Relay (livraison à domicile)",
     "shippingMethod": "Mode de livraison",
     "shippingRelay": "Mondial Relay (point relais)",
-    "shippingStandard": "Colissimo (standard)",
     "submit": "Valider la commande",
     "submitting": "Traitement en cours…"
   },
@@ -224,6 +239,8 @@
     "categories": "Impossible de récupérer les catégories.",
     "customerFetch": "Impossible de récupérer les informations client.",
     "customerUpdate": "Impossible de mettre à jour les informations client.",
+    "orderCreate": "La commande n'a pas pu être enregistrée.",
+    "orderNotCreated": "Commande non créée.",
     "ordersFetch": "Impossible de récupérer les commandes.",
     "page": "Impossible de récupérer la page.",
     "pageNotFound": "Page non trouvée",
@@ -231,6 +248,7 @@
     "products": "Impossible de récupérer les produits.",
     "profileFetch": "Impossible de récupérer le profil.",
     "profileUpdate": "Impossible de mettre à jour le profil.",
+    "relayPoints": "Impossible de récupérer les points relais.",
     "site": "Impossible de récupérer les informations du site.",
     "spotlight": "Impossible de récupérer les produits à la une.",
     "suggestions": "Impossible de récupérer les suggestions.",

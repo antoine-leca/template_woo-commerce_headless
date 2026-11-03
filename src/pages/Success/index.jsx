@@ -21,7 +21,7 @@ const isOrderNumber = (value) => /^\d+$/.test(value ?? "");
 export default function Success() {
   const { t } = useTranslation();
   const { orderId } = useParams();
-  const isSignedIn = useSelector((state) => Boolean(state.user.token));
+  const isSignedIn = useSelector((state) => state.user.isAuthenticated);
 
   const steps = [
     { key: "email" },

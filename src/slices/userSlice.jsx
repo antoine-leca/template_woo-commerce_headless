@@ -8,7 +8,26 @@ import {
   fetchCurrentUserOrdersThunk,
   updateCurrentCustomerThunk,
   deleteCurrentUserThunk,
+  restoreSessionThunk,
+  logoutThunk,
 } from "../thunkActionsCreator/userThunks";
+
+// Le JWT vit dans un cookie HttpOnly hors de portée du JavaScript : le store
+// ne garde que le fait d'être connecté et le jeton anti-CSRF, en mémoire
+// seulement (restoreSessionThunk le redemande au rechargement).
+const clearSession = (state) => {
+  state.isAuthenticated = false;
+  state.csrfToken = null;
+  state.profile = null;
+  state.customer = null;
+  state.orders = [];
+};
+
+const openSession = (state, action) => {
+  state.isAuthenticated = true;
+  state.csrfToken = action.payload.csrfToken;
+  state.profile = action.payload.profile;
+};
 
 export const userSlice = createSlice({
   name: "user",
@@ -16,33 +35,29 @@ export const userSlice = createSlice({
     profile: null,
     customer: null,
     orders: [],
-    token:
-      typeof window !== "undefined"
-        ? localStorage.getItem("wc_user_token")
-        : null,
+    isAuthenticated: false,
+    csrfToken: null,
     loading: false,
     error: null,
   },
-  reducers: {
-    logout: (state) => {
-      state.profile = null;
-      state.customer = null;
-      state.orders = [];
-      state.token = null;
-      localStorage.removeItem("wc_user_token");
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(restoreSessionThunk.fulfilled, (state, action) => {
+        if (action.payload) {
+          openSession(state, action);
+        } else {
+          clearSession(state);
+        }
+      })
+      .addCase(logoutThunk.fulfilled, clearSession)
       .addCase(loginThunk.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.token = action.payload.token;
-        state.profile = action.payload.profile;
-        localStorage.setItem("wc_user_token", action.payload.token);
+        openSession(state, action);
       })
       .addCase(loginThunk.rejected, (state, action) => {
         state.loading = false;
@@ -54,9 +69,7 @@ export const userSlice = createSlice({
       })
       .addCase(registerThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.token = action.payload.token;
-        state.profile = action.payload.profile;
-        localStorage.setItem("wc_user_token", action.payload.token);
+        openSession(state, action);
       })
       .addCase(registerThunk.rejected, (state, action) => {
         state.loading = false;
@@ -129,14 +142,10 @@ export const userSlice = createSlice({
       })
       .addCase(deleteCurrentUserThunk.fulfilled, (state) => {
         state.loading = false;
-        // Remet tout l'état utilisateur à zéro (déconnexion automatique)
-        state.token = null;
-        state.profile = null;
-        state.customer = null;
-        state.orders = [];
+        // Remet tout l'état utilisateur à zéro (déconnexion automatique,
+        // le serveur a déjà effacé le cookie)
+        clearSession(state);
         state.error = null;
-
-        localStorage.removeItem("wc_user_token");
       })
       .addCase(deleteCurrentUserThunk.rejected, (state, action) => {
         state.loading = false;
@@ -144,5 +153,3 @@ export const userSlice = createSlice({
       });
   },
 });
-
-export const { logout } = userSlice.actions;

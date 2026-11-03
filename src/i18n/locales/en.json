@@ -152,15 +152,30 @@
     "errors": {
       "cardField": "The card field could not be found.",
       "cardOnly": "Only card payment is available at the moment.",
-      "notCreated": "Order was not created.",
-      "order": "Your order could not be placed."
+      "fillRequired": "Please fill in all required fields marked in red.",
+      "invalidEmail": "Invalid email",
+      "required": "Required",
+      "selectRelay": "Please select a pickup point."
+    },
+    "mondialRelay": {
+      "choose": "Choose",
+      "cityPlaceholder": "City (optional)",
+      "errors": {
+        "none": "No pickup point found for this postcode.",
+        "postalRequired": "Please enter a postcode."
+      },
+      "postalPlaceholder": "Postcode (e.g. 13001)",
+      "search": "Search",
+      "searching": "Searching…",
+      "selected": "Selected ✓",
+      "selectedTitle": "Selected pickup point:",
+      "title": "Choose a pickup point"
     },
     "orContinue": "Or continue below",
     "paymentDetails": "Payment details",
-    "shippingExpress": "Chronopost (express, 24 h)",
+    "shippingHome": "Mondial Relay (home delivery)",
     "shippingMethod": "Shipping method",
     "shippingRelay": "Mondial Relay (pickup point)",
-    "shippingStandard": "Colissimo (standard)",
     "submit": "Place order",
     "submitting": "Processing…"
   },
@@ -224,6 +239,8 @@
     "categories": "Categories could not be loaded.",
     "customerFetch": "Your customer details could not be loaded.",
     "customerUpdate": "Your customer details could not be updated.",
+    "orderCreate": "Your order could not be placed.",
+    "orderNotCreated": "Order was not created.",
     "ordersFetch": "Your orders could not be loaded.",
     "page": "This page could not be loaded.",
     "pageNotFound": "Page not found",
@@ -231,6 +248,7 @@
     "products": "Products could not be loaded.",
     "profileFetch": "Your profile could not be loaded.",
     "profileUpdate": "Your profile could not be updated.",
+    "relayPoints": "Pickup points could not be loaded.",
     "site": "Site information could not be loaded.",
     "spotlight": "Featured products could not be loaded.",
     "suggestions": "Suggestions could not be loaded.",

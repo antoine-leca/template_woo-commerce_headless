@@ -2,8 +2,6 @@ export const translateAttributeName = (name, t) => {
   if (!name) return "";
   const lowerName = name.trim().toLowerCase();
 
-  console.log("Nom d'attribut reçu de l'API :", lowerName); // <-- Ajoute ceci
-
   switch (lowerName) {
     case "taille":
     case "size":

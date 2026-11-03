@@ -14,7 +14,7 @@ export default function Header() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const cartItems = useSelector((state) => state.cart.items);
-  const { token } = useSelector((state) => state.user);
+  const { isAuthenticated } = useSelector((state) => state.user);
   const siteSettings = useSelector((state) => state.site.siteSettings);
   const siteLogo = siteSettings?.siteLogo;
 
@@ -82,7 +82,7 @@ export default function Header() {
               un onglet et l'aperçu de l'URL fonctionnent comme partout
               ailleurs. Sans session il n'y a rien à montrer sur /profile,
               qui n'est protégé par aucun garde : on ouvre la connexion. */}
-          {token ? (
+          {isAuthenticated ? (
             <Link
               to="/profile"
               className={styles.userIconButton}
