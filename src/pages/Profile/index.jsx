@@ -6,6 +6,7 @@ import UserInfo from "./components/UserInfo";
 import OrdersList from "./components/OrdersList";
 import ProfileNavigation from "./components/ProfileNavigation";
 import { useTranslation } from "react-i18next";
+import Seo from "../../components/Seo";
 
 export default function Profile() {
   const { t } = useTranslation();
@@ -45,6 +46,7 @@ export default function Profile() {
 
   return (
     <div className="profile-container">
+      <Seo title={t("seo.profile")} noIndex />
       {/* Navigation visible si desktop OU si menu mobile actif */}
       {(isDesktop || isMobileMenuVisible) && (
         <ProfileNavigation

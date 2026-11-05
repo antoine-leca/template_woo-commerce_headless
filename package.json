@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "i18n": "node scripts/i18n-audit.mjs",
     "i18n:strict": "node scripts/i18n-audit.mjs --strict",

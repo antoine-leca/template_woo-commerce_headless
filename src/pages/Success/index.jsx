@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import Seo from "../../components/Seo";
 import { HOME_CATALOG_PATH } from "../../constants/navigation";
 import "./Success.scss";
 
@@ -33,6 +34,7 @@ export default function Success() {
 
   return (
     <section className="order-success">
+      <Seo title={t("seo.success")} noIndex />
       <div className="order-success__inner">
         {isOrderNumber(orderId) && (
           <p className="order-success__reference">

@@ -1,0 +1,15 @@
+# Pages sans intérêt pour un moteur de recherche : parcours d'achat et espace
+# client. Elles portent aussi une balise « noindex », au cas où un robot
+# ignore ce fichier.
+User-agent: *
+Disallow: /panier
+Disallow: /commande
+Disallow: /checkout
+Disallow: /profile
+Disallow: /wishlist
+Disallow: /success/
+Disallow: /new-password
+
+# La ligne « Sitemap: » est ajoutée à la fin du build par
+# scripts/generate-sitemap.mjs lorsque SITE_URL (adresse publique du site) est
+# définie : un sitemap exige des adresses absolues.

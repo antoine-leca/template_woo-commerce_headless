@@ -4,6 +4,7 @@ import DOMPurify from "dompurify";
 import { fetchPageThunk } from "../../thunkActionsCreator/pagesThunks";
 import { localizedPageSlug, DEFAULT_LANGUAGE } from "../../i18n";
 import Loader from "../Loader";
+import Seo from "../Seo";
 import "./PageContent.css";
 import { useTranslation } from "react-i18next";
 
@@ -34,6 +35,7 @@ export default function PageContent({ slug, renderBody }) {
 
   return (
     <article className="page-content">
+      <Seo title={page.title?.rendered} description={page.excerpt?.rendered} />
       {isFallback && (
         <p className="page-content__translation-notice">
           {t("page.translationPending")}

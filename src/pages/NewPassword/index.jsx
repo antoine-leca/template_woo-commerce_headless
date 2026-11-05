@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Seo from "../../components/Seo";
 
 export default function NewPassword() {
   const { t } = useTranslation();
@@ -28,7 +29,8 @@ export default function NewPassword() {
   };
 
   return (
-    <main>
+    <div>
+      <Seo title={t("seo.newPassword")} noIndex />
       <h1>{t("auth.newPassword")}</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="password">{t("auth.newPassword")}</label>
@@ -42,6 +44,6 @@ export default function NewPassword() {
         <button type="submit">{t("auth.confirm")}</button>
       </form>
       {message && <p>{message}</p>}
-    </main>
+    </div>
   );
 }

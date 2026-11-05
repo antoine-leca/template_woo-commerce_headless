@@ -9,12 +9,14 @@ import {
 } from "./mockData";
 import "./index.scss";
 import { useTranslation } from "react-i18next";
+import Seo from "../../components/Seo";
 
 export default function Payment() {
   const { t } = useTranslation();
 
   return (
     <div className="payment">
+      <Seo title={t("seo.checkout")} noIndex />
       <h1 className="payment__title">{t("cart.checkout")}</h1>
 
       <div className="payment__container">

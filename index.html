@@ -3,24 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Storefront WooCommerce</title>
-    <meta name="description" content="Front-end React connecté à WooCommerce" />
-    <!-- Styles des blocs WordPress (pages de contenu). Chargés sans bloquer
-         l'affichage : unpkg.com est un service externe dont la lenteur ne doit
-         pas retarder toute la page. -->
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@wordpress/block-library@8/build-style/style.css"
-      media="print"
-      onload="this.media = 'all'"
+    <!-- Valeurs par défaut, vues par les robots de partage (réseaux sociaux,
+         messageries) qui n'exécutent pas JavaScript, et avant le chargement de
+         l'application. Le composant Seo les remplace ensuite, page par page. -->
+    <title>Boutique en ligne</title>
+    <meta
+      name="description"
+      content="Découvrez notre catalogue et commandez en ligne, livraison en point relais ou à domicile."
     />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/@wordpress/block-library@8/build-style/style.css"
-      />
-    </noscript>
+    <!-- Les styles des blocs WordPress (unpkg.com) sont ajoutés par main.jsx :
+         un gestionnaire onload ici serait bloqué par une politique de contenu
+         (CSP) stricte. -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
   </head>
   <body>
     <div id="root"></div>

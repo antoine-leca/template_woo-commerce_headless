@@ -6,6 +6,7 @@ import ProductCard from "../../components/ProductCard";
 import "./index.css";
 import Loader from "../../components/Loader";
 import { useTranslation } from "react-i18next";
+import Seo from "../../components/Seo";
 
 export default function Wishlist() {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ export default function Wishlist() {
 
   return (
     <div className="wishlist-page">
+      <Seo title={t("seo.wishlist")} noIndex />
       <h1>{t("wishlist.title")}</h1>
       {loading && <Loader size="lg" />}
       {!loading && items.length === 0 && <p>{t("wishlist.empty")}</p>}

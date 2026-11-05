@@ -9,6 +9,7 @@ import {
   MOCK_CART_TOTALS,
 } from "../../components/Cart/mockCart";
 import { useTranslation } from "react-i18next";
+import Seo from "../../components/Seo";
 
 export default function Checkout() {
   const { t } = useTranslation();
@@ -22,6 +23,7 @@ export default function Checkout() {
 
   return (
     <div className="checkout-container">
+      <Seo title={t("seo.checkout")} noIndex />
       <StripeWrapper>
         <CheckoutForm
           shippingMethod={shippingMethod}
