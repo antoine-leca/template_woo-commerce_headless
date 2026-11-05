@@ -11,6 +11,7 @@ import Review from "../Review";
 import Seo from "../Seo";
 import WishlistButton from "../WishlistButton"; // TEMP: wishlist testing, remove before commit
 import { decodeHtml } from "../../utils/decodeHtml.js";
+import { sanitizeHtml } from "../../utils/sanitizeHtml.js";
 
 import "./index.css";
 import Loader from "../Loader/index.jsx";
@@ -176,7 +177,16 @@ export default function ProductDetails() {
                           "pictureDetails" + index
                         }
                         className={`thumbnail-item ${index === activeImageIndex ? "active" : ""}`}
+                        role="button"
+                        tabIndex={0}
+                        aria-pressed={index === activeImageIndex}
                         onClick={() => setActiveImageIndex(index)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            setActiveImageIndex(index);
+                          }
+                        }}
                       >
                         <img
                           src={img.src}
@@ -205,10 +215,11 @@ export default function ProductDetails() {
             <div
               className="short-description"
               dangerouslySetInnerHTML={{
-                __html:
+                __html: sanitizeHtml(
                   productToDisplay.short_description ||
-                  productToDisplay.description ||
-                  "<p>Aucune introduction disponible.</p>",
+                    productToDisplay.description ||
+                    "<p>Aucune introduction disponible.</p>",
+                ),
               }}
             />
 

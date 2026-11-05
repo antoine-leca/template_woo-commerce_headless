@@ -28,8 +28,8 @@ export default function DeleteAccountButton() {
         alert(t("auth.accountDeleted"));
         navigate("/"); // Redirection vers l'accueil après suppression
       })
-      .catch((err) => {
-        console.error("Erreur lors de la suppression :", err);
+      .catch(() => {
+        // Échec : le compte reste en place, l'utilisateur peut réessayer.
       });
   };
 

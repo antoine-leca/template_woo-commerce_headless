@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import WishlistButton from "../WishlistButton"; // TEMP: wishlist testing, remove before commit
 import "./index.css";
 import { useTranslation } from "react-i18next";
+import { decodeHtml } from "../../utils/decodeHtml";
+import { sanitizeHtml } from "../../utils/sanitizeHtml";
 import {
   getAttributeOptions,
   getDefaultSelection,
@@ -49,7 +51,7 @@ export default function ProductCard({ product }) {
       {/* TEmporally Button: wishlist testing */}
       <WishlistButton product={product} />
       <Link to={"/product/" + product.id}>
-        <p dangerouslySetInnerHTML={{ __html: productName || "-" }} />
+        <p>{decodeHtml(productName || "-")}</p>
         <p>Marque: {product.brands?.[0]?.name}</p>
         <img
           src={
@@ -83,7 +85,7 @@ export default function ProductCard({ product }) {
 
       <span>
         <p>{t("product.price")} :</p>
-        <p dangerouslySetInnerHTML={{ __html: product.price_html }}></p>
+        <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(product.price_html) }}></p>
       </span>
 
       {product.is_in_stock ? <p>{t("product.inStock")}</p> : <p>{t("product.outOfStock")}</p>}

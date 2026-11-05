@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsThunk } from "../../thunkActionsCreator/productsThunks";
 import { setFilters } from "../../slices/filtersSlice";
 import { useTranslation } from "react-i18next";
+import { decodeHtml } from "../../utils/decodeHtml";
 
 export default function Filters() {
   const { t } = useTranslation();
@@ -47,11 +48,9 @@ export default function Filters() {
       <select value={filters.category} onChange={handleCategoryChange}>
         <option value="">{t("catalog.allCategories")}</option>
         {categories.map((cat) => (
-          <option
-            key={cat.id}
-            value={cat.id}
-            dangerouslySetInnerHTML={{ __html: cat.name }}
-          ></option>
+          <option key={cat.id} value={cat.id}>
+            {decodeHtml(cat.name)}
+          </option>
         ))}
       </select>
       <input

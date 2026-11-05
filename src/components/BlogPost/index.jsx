@@ -6,6 +6,7 @@ import Seo from "../Seo";
 import "./index.css";
 import { formatLongDate } from "../../utils/formatDate";
 import { useTranslation } from "react-i18next";
+import { sanitizeHtml } from "../../utils/sanitizeHtml";
 
 export default function BlogPostComponent() {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ export default function BlogPostComponent() {
         {formatLongDate(singlePost.date)}
       </p>
 
-      <div dangerouslySetInnerHTML={{ __html: singlePost.contentHtml || "" }} />
+      <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(singlePost.contentHtml) }} />
     </div>
   );
 }

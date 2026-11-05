@@ -5,6 +5,7 @@ import "./index.css";
 import { formatDate } from "../../utils/formatDate";
 import { withAuth } from "../../utils/withAuth";
 import { useTranslation } from "react-i18next";
+import { sanitizeHtml } from "../../utils/sanitizeHtml";
 
 const Review = ({ productId }) => {
   const { t } = useTranslation();
@@ -137,17 +138,9 @@ const Review = ({ productId }) => {
           });
           setHasPurchased(purchased);
         } else {
-          console.error(
-            `❌ [Review] Erreur API Orders (${response.status}) :`,
-            await response.text(),
-          );
           setHasPurchased(false);
         }
-      } catch (err) {
-        console.error(
-          "❌ [Review] Erreur lors de la vérification de l'achat :",
-          err,
-        );
+      } catch {
         setHasPurchased(false);
       } finally {
         setCheckingPurchase(false);
@@ -285,7 +278,7 @@ const Review = ({ productId }) => {
           <div
             className="review-content"
             dangerouslySetInnerHTML={{
-              __html: review.review || "",
+              __html: sanitizeHtml(review.review),
             }}
           />
         </article>

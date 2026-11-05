@@ -23,7 +23,6 @@ export default function StripeWrapper({ children }) {
         }
         setStripePromise(loadStripe(data.publishable_key));
       } catch (err) {
-        console.error("Erreur récupération clé Stripe :", err);
         setError(err.message);
       } finally {
         setLoading(false);

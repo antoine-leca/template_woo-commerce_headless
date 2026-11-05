@@ -72,11 +72,8 @@ export default function SimilarProducts({
         // Mélange aléatoire + Sélection des 3 premiers
         const randomized = recommendations.sort(() => 0.5 - Math.random());
         setSimilarProducts(randomized.slice(0, 3));
-      } catch (error) {
-        console.error(
-          "Erreur lors de la récupération des recommandations :",
-          error.message,
-        );
+      } catch {
+        // Les produits similaires sont facultatifs : on n'affiche rien.
       } finally {
         setLoadingSimilar(false);
       }
