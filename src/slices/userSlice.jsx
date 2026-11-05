@@ -36,6 +36,10 @@ export const userSlice = createSlice({
     customer: null,
     orders: [],
     isAuthenticated: false,
+    // Vrai dès que le serveur a répondu à « y a-t-il une session ? », que la
+    // réponse soit oui ou non. Avant, isAuthenticated vaut false sans que cela
+    // veuille dire « invité » : ce qui en dépend attend (voir main.jsx).
+    sessionChecked: false,
     csrfToken: null,
     loading: false,
     error: null,
@@ -49,6 +53,12 @@ export const userSlice = createSlice({
         } else {
           clearSession(state);
         }
+        state.sessionChecked = true;
+      })
+      // Serveur injoignable : on ne sait pas, on considère un invité plutôt que
+      // de laisser l'interface en attente indéfiniment.
+      .addCase(restoreSessionThunk.rejected, (state) => {
+        state.sessionChecked = true;
       })
       .addCase(logoutThunk.fulfilled, clearSession)
       .addCase(loginThunk.pending, (state) => {

@@ -8,15 +8,25 @@ import { openAuthModal } from "../../../../slices/authModalSlice";
 import LanguageSwitcher from "../../../../components/LanguageSwitcher";
 import SocialLinks from "../../../../components/SocialLinks";
 import { useTranslation } from "react-i18next";
+import { readSiteHints } from "../../../../utils/siteHints";
+
+// Lu une fois : ce que le dernier chargement savait du logo (voir siteHints.js).
+const siteHints = readSiteHints();
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const cartItems = useSelector((state) => state.cart.items);
-  const { isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated, sessionChecked } = useSelector((state) => state.user);
   const siteSettings = useSelector((state) => state.site.siteSettings);
   const siteLogo = siteSettings?.siteLogo;
+
+  // Les réglages n'ont pas encore répondu : on ne sait pas s'il y a un logo
+  // personnalisé. Le mot-symbole serait remplacé par l'image à leur arrivée ;
+  // on réserve donc sa place sans le montrer, sauf si le dernier chargement a
+  // appris qu'il n'y en a pas.
+  const logoPending = siteSettings === null && siteHints.hasLogo !== false;
 
   const cartCount = cartItems.reduce(
     (total, item) => total + (Number(item.quantity) || 0),
@@ -56,7 +66,7 @@ export default function Header() {
         </div>
 
         {/* Logo RAVI */}
-        <Link to="/">
+        <Link to="/" style={logoPending ? { visibility: "hidden" } : undefined}>
           {siteLogo ? (
             <img
               src={siteLogo}
@@ -94,7 +104,15 @@ export default function Header() {
             <button
               type="button"
               className={styles.userIconButton}
-              onClick={() => dispatch(openAuthModal("login"))}
+              // Même icône qu'on soit invité ou connecté : on l'affiche tout de
+              // suite, mais le clic n'a de sens qu'une fois la session connue
+              // (sinon un client connecté verrait s'ouvrir la connexion).
+              onClick={
+                sessionChecked
+                  ? () => dispatch(openAuthModal("login"))
+                  : undefined
+              }
+              aria-disabled={sessionChecked ? undefined : "true"}
               aria-label={t("header.account")}
             >
               {userIcon}

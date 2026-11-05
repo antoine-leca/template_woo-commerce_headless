@@ -18,6 +18,7 @@ import {
   fetchSiteSettingsThunk,
 } from "./thunkActionsCreator/siteThunk";
 import { setSiteSettings } from "./slices/siteSlice";
+import { saveSiteHints } from "./utils/siteHints";
 
 import Home from "./pages/Home";
 import Store from "./pages/Store";
@@ -47,7 +48,6 @@ import Toast from "./components/Toast";
 import ScrollToTop from "./components/ScrollToTop";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SkipLink from "./components/SkipLink";
-import AppLoader from "./components/AppLoader/AppLoader";
 // import AuthModal from "./components/AuthModal";
 
 import "./index.css";
@@ -66,30 +66,47 @@ blockLibraryStyles.href =
   "https://unpkg.com/@wordpress/block-library@8/build-style/style.css";
 document.head.appendChild(blockLibraryStyles);
 
-async function initializeApp() {
+function initializeApp() {
   // Ancien emplacement du JWT, avant son passage en cookie HttpOnly : on ne
   // le laisse pas traîner jusqu'à son expiration.
   localStorage.removeItem("wc_user_token");
 
+  // L'interface (fond, header) se monte tout de suite : elle n'attendait
+  // jusqu'ici que la réponse de WordPress à deux requêtes (réglages du site et
+  // session) pour afficher quoi que ce soit, soit une page vide pendant tout ce
+  // temps. Les requêtes partent maintenant en parallèle de l'affichage.
+  //
+  // Ce qui dépend de leur réponse l'attend sans bouger : l'icône de compte et
+  // la route /profile attendent user.sessionChecked, le logo et le contenu de
+  // l'accueil attendent site.siteSettings (voir Header, CatalogSection,
+  // ProtectedRoute). Sans cette précaution, l'interface s'afficherait un
+  // instant comme pour un invité, ce que l'ancien ordre évitait.
+  mountApp();
+
   store.dispatch(initializeCartThunk());
   store.dispatch(fetchSiteThunk());
 
-  // Session restaurée avant le premier rendu : sans cela l'interface
-  // s'afficherait un instant comme pour un invité.
-  await Promise.all([
-    store.dispatch(fetchSiteSettingsThunk()).unwrap().catch(() => {
+  store
+    .dispatch(fetchSiteSettingsThunk())
+    .unwrap()
+    .then((acfSettings) => {
+      // Retenu pour la prochaine visite : voir utils/siteHints.js
+      saveSiteHints({
+        hasHero: Boolean(acfSettings.hero_video),
+        hasLogo: Boolean(acfSettings.site_logo_custom),
+      });
+    })
+    .catch(() => {
       store.dispatch(setSiteSettings({}));
-    }),
-    store.dispatch(restoreSessionThunk()),
-  ]);
+    });
 
-  if (store.getState().user.isAuthenticated) {
-    store.dispatch(fetchCurrentUserThunk());
-    store.dispatch(fetchCurrentCustomerThunk());
-    store.dispatch(fetchCurrentUserOrdersThunk());
-  }
-
-  mountApp();
+  store.dispatch(restoreSessionThunk()).then(() => {
+    if (store.getState().user.isAuthenticated) {
+      store.dispatch(fetchCurrentUserThunk());
+      store.dispatch(fetchCurrentCustomerThunk());
+      store.dispatch(fetchCurrentUserOrdersThunk());
+    }
+  });
 }
 
 function mountApp() {
@@ -136,7 +153,6 @@ function mountApp() {
   ReactDOM.createRoot(document.getElementById("root")).render(
     <HelmetProvider>
       <Provider store={store}>
-        <AppLoader />
         <Router
           future={{
             v7_startTransition: true,

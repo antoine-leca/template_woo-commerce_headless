@@ -9,7 +9,7 @@
     <!-- Valeurs par défaut, vues par les robots de partage (réseaux sociaux,
          messageries) qui n'exécutent pas JavaScript, et avant le chargement de
          l'application. Le composant Seo les remplace ensuite, page par page. -->
-    <title>Boutique en ligne</title>
+    <title>RAVI®</title>
     <meta
       name="description"
       content="Découvrez notre catalogue et commandez en ligne, livraison en point relais ou à domicile."
@@ -18,6 +18,18 @@
          un gestionnaire onload ici serait bloqué par une politique de contenu
          (CSP) stricte. -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <!-- Fond de la page, avant tout fichier : la feuille de style de
+         l'application arrive après le HTML (et, en développement, après le
+         JavaScript), et la page restait blanche en attendant. Même couleur que
+         --bg-color (src/index.css) ; à changer aux deux endroits. -->
+    <meta name="theme-color" content="#6784c8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background-color: #6784c8;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
