@@ -45,6 +45,7 @@ import Seo from "./components/Seo";
 import Footer from "./components/Footer";
 import Toast from "./components/Toast";
 import ScrollToTop from "./components/ScrollToTop";
+import ProtectedRoute from "./components/ProtectedRoute";
 import AppLoader from "./components/AppLoader/AppLoader";
 // import AuthModal from "./components/AuthModal";
 
@@ -140,7 +141,14 @@ function mountApp() {
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/panier" element={<Cart />} />
               <Route path="/commande" element={<Payment />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:slug" element={<SinglePost />} />
