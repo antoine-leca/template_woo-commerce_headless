@@ -50,8 +50,17 @@ add_filter('rest_allowed_cors_origins', function($origins) use ($allowed_origins
 // Ensure WordPress sends CORS headers
 add_filter('rest_send_cors_headers', '__return_true');
 
-// Anti-CSRF header sent alongside the HttpOnly auth cookie (auth-cookie.php)
+// En-têtes que le front envoie (preflight) et lit (exposés).
+// - X-CSRF-Token : jeton anti-CSRF des écritures (auth-cookie.php)
+// - Nonce, Cart-Token : session panier du Store API. Ils sont aussi ajoutés
+//   par WooCommerce sur ses propres routes ; Nonce est exposé ici car le
+//   front le lit dans les réponses (WooCommerce n'expose que Cart-Token).
+// Passer par ces filtres, plutôt que par header(), fonctionne aussi sur le
+// Store API : il met fin aux requêtes preflight lui-même.
 add_filter('rest_allowed_cors_headers', function($headers) {
-    $headers[] = 'X-CSRF-Token';
-    return $headers;
+    return array_unique(array_merge($headers, ['X-CSRF-Token', 'Nonce', 'Cart-Token']));
+});
+
+add_filter('rest_exposed_cors_headers', function($headers) {
+    return array_unique(array_merge($headers, ['Nonce', 'Cart-Token']));
 });

@@ -11,7 +11,25 @@ add_action('rest_api_init', function () {
         'callback'            => 'headless_create_order_from_checkout',
         'permission_callback' => '__return_true',
     ]);
+
+    // Seconde étape d'un paiement qui demande une authentification 3D Secure
+    register_rest_route('custom/v1', '/checkout/confirm', [
+        'methods'             => 'POST',
+        'callback'            => 'headless_confirm_order_payment',
+        'permission_callback' => '__return_true',
+    ]);
 });
+
+// Les e-mails de confirmation et de notification d'une commande du front sont
+// envoyés par ce fichier (avec le détail de la livraison) : on coupe les
+// courriers WooCommerce équivalents, qui doublonneraient au passage en « En
+// cours ». Les autres e-mails (commande terminée, remboursement...) restent
+// ceux de WooCommerce.
+foreach (['new_order', 'customer_processing_order'] as $headless_email_id) {
+    add_filter('woocommerce_email_enabled_' . $headless_email_id, function ($enabled, $order) {
+        return ($order instanceof WC_Order && $order->get_meta('_headless_checkout')) ? false : $enabled;
+    }, 10, 2);
+}
 
 /**
  * Tarifs de livraison Mondial Relay (source de vérité côté serveur).
@@ -62,6 +80,14 @@ function headless_create_order_from_checkout($request)
     $email = sanitize_email($shipping_address['email']);
     if (!is_email($email)) {
         return new WP_Error('invalid_email', 'Email invalide.', ['status' => 400]);
+    }
+
+    if ($payment_method_id === '') {
+        return new WP_Error('missing_payment_method', 'Moyen de paiement manquant.', ['status' => 400]);
+    }
+
+    if (!class_exists('WC_Stripe_API') || !class_exists('WC_Stripe_Helper')) {
+        return new WP_Error('stripe_unavailable', 'Le paiement par carte est indisponible : l\'extension Stripe n\'est pas active.', ['status' => 500]);
     }
 
     // Mode de livraison : on valide l'id côté serveur, le prix et le type viennent
@@ -118,6 +144,11 @@ function headless_create_order_from_checkout($request)
     }
 
     $order = wc_create_order();
+
+    // Repère les commandes du front (voir le filtre des e-mails WooCommerce en
+    // tête de fichier) et garde l'adresse e-mail saisie au paiement.
+    $order->update_meta_data('_headless_checkout', '1');
+    $order->update_meta_data('_headless_customer_email', $email);
 
     // Associer la commande au user connecté si disponible
     if ($user_id > 0) {
@@ -200,19 +231,234 @@ function headless_create_order_from_checkout($request)
     // fait les deux.
     wc_maybe_reduce_stock_levels($order_id);
 
-    // Renseigner les adresses du profil (première commande uniquement)
-    if ($user_id > 0) {
-        headless_save_customer_addresses_from_order($order, $user_id);
+    $payment = headless_charge_order($order, $payment_method_id);
+
+    if ($payment['state'] === 'failed') {
+        return headless_payment_error($payment);
     }
 
-    headless_send_order_confirmation_email($order, $email);
-    headless_send_order_notification_to_admin($order);
+    // Carte à authentifier (3D Secure) : la commande reste en attente de
+    // paiement, le front termine l'authentification puis appelle
+    // /checkout/confirm.
+    if ($payment['state'] === 'action') {
+        return rest_ensure_response([
+            'success'           => true,
+            'requires_action'   => true,
+            'order_id'          => $order_id,
+            'order_key'         => $order->get_order_key(),
+            'client_secret'     => $payment['client_secret'],
+            'payment_intent_id' => $payment['intent_id'],
+        ]);
+    }
 
     return rest_ensure_response([
         'success'  => true,
         'order_id' => $order_id,
         'message' => 'Commande créée avec succès',
     ]);
+}
+
+/**
+ * Débite la carte : crée et confirme un PaymentIntent Stripe avec les clés de
+ * l'extension WooCommerce Stripe (mode test ou production selon ses réglages).
+ *
+ * Retourne l'état du paiement :
+ *  - 'paid'   : débité, la commande est passée « En cours » et les e-mails partent
+ *  - 'action' : authentification 3D Secure à terminer côté front
+ *  - 'failed' : refusé ou erreur, la commande est marquée échouée et son stock restitué
+ */
+function headless_charge_order($order, $payment_method_id)
+{
+    // Rien à débiter (ne devrait pas arriver : le prix vient du catalogue).
+    if ((float) $order->get_total() <= 0) {
+        headless_complete_paid_order($order, '');
+        return ['state' => 'paid'];
+    }
+
+    $currency = strtolower($order->get_currency());
+
+    try {
+        $intent = WC_Stripe_API::request([
+            'amount'                    => WC_Stripe_Helper::get_stripe_amount($order->get_total(), $currency),
+            'currency'                  => $currency,
+            'payment_method'            => $payment_method_id,
+            'confirm'                   => 'true',
+            'automatic_payment_methods' => ['enabled' => 'true', 'allow_redirects' => 'never'],
+            'description'               => sprintf('%s - Commande n°%s', get_bloginfo('name'), $order->get_order_number()),
+            'metadata'                  => ['order_id' => (string) $order->get_id(), 'site_url' => home_url()],
+        ], 'payment_intents');
+    } catch (Exception $e) {
+        return headless_payment_failed($order, 'Le service de paiement ne répond pas.', 'unavailable');
+    }
+
+    if (!empty($intent->error)) {
+        $reason = isset($intent->error->message) ? $intent->error->message : 'Paiement refusé.';
+        return headless_payment_failed($order, $reason, headless_stripe_error_slug($intent->error));
+    }
+
+    $order->update_meta_data('_stripe_intent_id', $intent->id);
+    $order->save();
+
+    if ($intent->status === 'succeeded') {
+        headless_complete_paid_order($order, $intent->id);
+        return ['state' => 'paid'];
+    }
+
+    if ($intent->status === 'requires_action') {
+        return [
+            'state'         => 'action',
+            'client_secret' => $intent->client_secret,
+            'intent_id'     => $intent->id,
+        ];
+    }
+
+    return headless_payment_failed($order, 'Le paiement n\'a pas pu être finalisé.', 'generic');
+}
+
+/**
+ * Commande payée : « En cours », profil client, e-mails.
+ */
+function headless_complete_paid_order($order, $transaction_id)
+{
+    $order->payment_complete($transaction_id);
+
+    $user_id = $order->get_customer_id();
+    if ($user_id > 0) {
+        // Renseigner les adresses du profil (première commande uniquement)
+        headless_save_customer_addresses_from_order($order, $user_id);
+    }
+
+    $to = $order->get_meta('_headless_customer_email') ?: $order->get_billing_email();
+    headless_send_order_confirmation_email($order, $to);
+    headless_send_order_notification_to_admin($order);
+}
+
+/**
+ * Paiement refusé : la commande passe en « Échouée » et le stock réservé à sa
+ * création est restitué. $reason (le texte de Stripe, en anglais) sert à la
+ * note de commande destinée au gestionnaire ; $slug, au message du client.
+ */
+function headless_payment_failed($order, $reason, $slug = 'generic')
+{
+    $order->update_status('failed', 'Paiement Stripe refusé : ' . $reason);
+    wc_maybe_increase_stock_levels($order->get_id());
+
+    return ['state' => 'failed', 'slug' => $slug];
+}
+
+/**
+ * Code court décrivant un refus de Stripe, sans rien dire de plus que ce qu'un
+ * client peut savoir (une carte perdue ou volée est présentée comme refusée).
+ * Le front traduit chaque code (errors.payment.* dans les fichiers de langue).
+ */
+function headless_stripe_error_slug($error)
+{
+    $code = !empty($error->decline_code) ? $error->decline_code : (isset($error->code) ? $error->code : '');
+
+    $slugs = [
+        'insufficient_funds'                    => 'insufficient_funds',
+        'expired_card'                          => 'expired_card',
+        'incorrect_cvc'                         => 'incorrect_cvc',
+        'invalid_cvc'                           => 'incorrect_cvc',
+        'incorrect_number'                      => 'incorrect_number',
+        'invalid_number'                        => 'incorrect_number',
+        'invalid_expiry_month'                  => 'invalid_expiry',
+        'invalid_expiry_year'                   => 'invalid_expiry',
+        'processing_error'                      => 'processing_error',
+        'authentication_required'               => 'authentication_failed',
+        'payment_intent_authentication_failure' => 'authentication_failed',
+    ];
+
+    return isset($slugs[$code]) ? $slugs[$code] : 'declined';
+}
+
+/**
+ * Réponse d'erreur 402 d'un paiement refusé : message en français pour les
+ * appels directs, et le code ('payment_error') que le front traduit.
+ */
+function headless_payment_error($payment)
+{
+    $messages = [
+        'declined'              => 'Votre carte a été refusée. Essayez une autre carte ou contactez votre banque.',
+        'insufficient_funds'    => 'Fonds insuffisants sur cette carte.',
+        'expired_card'          => 'Cette carte est expirée.',
+        'incorrect_cvc'         => 'Le code de sécurité (CVC) de la carte est incorrect.',
+        'incorrect_number'      => 'Le numéro de carte est invalide.',
+        'invalid_expiry'        => 'La date d\'expiration de la carte est invalide.',
+        'processing_error'      => 'Une erreur est survenue lors du traitement de la carte. Veuillez réessayer.',
+        'authentication_failed' => 'L\'authentification de la carte a échoué.',
+        'unavailable'           => 'Le service de paiement est momentanément indisponible. Veuillez réessayer dans quelques instants.',
+        'generic'               => 'Le paiement n\'a pas pu être finalisé.',
+    ];
+
+    $slug = isset($messages[$payment['slug']]) ? $payment['slug'] : 'generic';
+
+    return new WP_Error('payment_failed', $messages[$slug], ['status' => 402, 'payment_error' => $slug]);
+}
+
+/**
+ * Fin d'un paiement 3D Secure : on ne croit pas le front, on relit le
+ * PaymentIntent chez Stripe. Seul le détenteur de la clé de la commande (reçue
+ * à la création) peut la confirmer.
+ */
+function headless_confirm_order_payment($request)
+{
+    if (!function_exists('wc_get_order') || !class_exists('WC_Stripe_API')) {
+        return new WP_Error('stripe_unavailable', 'Le paiement par carte est indisponible.', ['status' => 500]);
+    }
+
+    $params    = $request->get_json_params();
+    $order_id  = isset($params['order_id']) ? absint($params['order_id']) : 0;
+    $order_key = isset($params['order_key']) ? sanitize_text_field($params['order_key']) : '';
+    $intent_id = isset($params['payment_intent_id']) ? sanitize_text_field($params['payment_intent_id']) : '';
+
+    $order = $order_id ? wc_get_order($order_id) : null;
+
+    if (
+        !$order
+        || !$order->get_meta('_headless_checkout')
+        || !hash_equals($order->get_order_key(), $order_key)
+        || $intent_id === ''
+        || !hash_equals((string) $order->get_meta('_stripe_intent_id'), $intent_id)
+    ) {
+        return new WP_Error('invalid_order', 'Commande introuvable.', ['status' => 404]);
+    }
+
+    // Déjà confirmée (double appel) : on répond comme au premier.
+    if ($order->has_status(['processing', 'completed'])) {
+        return rest_ensure_response(['success' => true, 'order_id' => $order_id]);
+    }
+
+    if (!$order->has_status('pending')) {
+        return new WP_Error('order_not_payable', 'Cette commande ne peut plus être payée.', ['status' => 409]);
+    }
+
+    try {
+        $intent = WC_Stripe_API::retrieve('payment_intents/' . $intent_id);
+    } catch (Exception $e) {
+        return new WP_Error('payment_unverified', 'Le service de paiement ne répond pas. Veuillez réessayer.', ['status' => 502]);
+    }
+
+    if (empty($intent) || !empty($intent->error)) {
+        return new WP_Error('payment_unverified', 'Le paiement n\'a pas pu être vérifié.', ['status' => 502]);
+    }
+
+    $same_order = isset($intent->metadata->order_id) && (string) $intent->metadata->order_id === (string) $order_id;
+    $amount_ok  = (int) $intent->amount === (int) WC_Stripe_Helper::get_stripe_amount($order->get_total(), $order->get_currency());
+
+    if ($intent->status === 'succeeded' && $same_order && $amount_ok) {
+        headless_complete_paid_order($order, $intent->id);
+        return rest_ensure_response(['success' => true, 'order_id' => $order_id]);
+    }
+
+    $reason = !empty($intent->last_payment_error->message)
+        ? $intent->last_payment_error->message
+        : 'Authentification de la carte non aboutie.';
+    $slug = !empty($intent->last_payment_error)
+        ? headless_stripe_error_slug($intent->last_payment_error)
+        : 'authentication_failed';
+
+    return headless_payment_error(headless_payment_failed($order, $reason, $slug));
 }
 
 /**

@@ -244,6 +244,18 @@
     "ordersFetch": "Your orders could not be loaded.",
     "page": "This page could not be loaded.",
     "pageNotFound": "Page not found",
+    "payment": {
+      "authentication_failed": "Card authentication failed.",
+      "declined": "Your card was declined. Try another card or contact your bank.",
+      "expired_card": "This card has expired.",
+      "generic": "The payment could not be completed.",
+      "incorrect_cvc": "The card's security code (CVC) is incorrect.",
+      "incorrect_number": "The card number is invalid.",
+      "insufficient_funds": "Insufficient funds on this card.",
+      "invalid_expiry": "The card's expiry date is invalid.",
+      "processing_error": "An error occurred while processing the card. Please try again.",
+      "unavailable": "The payment service is temporarily unavailable. Please try again in a few moments."
+    },
     "product": "This product could not be loaded.",
     "products": "Products could not be loaded.",
     "profileFetch": "Your profile could not be loaded.",

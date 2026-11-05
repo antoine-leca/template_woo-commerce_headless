@@ -363,7 +363,10 @@ import { fetchCurrentCustomerThunk } from "../../thunkActionsCreator/userThunks"
 import { useTranslation } from "react-i18next";
 import { HOME_CATALOG_PATH } from "../../constants/navigation";
 import { buildCheckoutPrefill } from "./checkoutPrefill";
-import { placeOrderThunk } from "../../thunkActionsCreator/checkoutThunk";
+import {
+  placeOrderThunk,
+  confirmOrderPaymentThunk,
+} from "../../thunkActionsCreator/checkoutThunk";
 
 export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
   const { t } = useTranslation();
@@ -548,6 +551,12 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
       return;
     }
 
+    // Le champ code postal du CardElement est masqué : l'adresse de
+    // facturation déjà saisie dans le formulaire est transmise à Stripe.
+    const billingForStripe = effectiveSameAsBilling
+      ? shippingAddress
+      : billingAddress;
+
     const { paymentMethod, error: stripeError } =
       await stripe.createPaymentMethod({
         type: "card",
@@ -556,6 +565,12 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
           name: `${billingAddress.first_name || ""} ${billingAddress.last_name || ""}`.trim(),
           email: shippingAddress.email,
           phone: shippingAddress.phone,
+          address: {
+            line1: billingForStripe.address_1 || undefined,
+            city: billingForStripe.city || undefined,
+            postal_code: billingForStripe.postcode || undefined,
+            country: billingForStripe.country || undefined,
+          },
         },
       });
 
@@ -579,7 +594,7 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
           }),
       };
 
-      const data = await dispatch(
+      let data = await dispatch(
         placeOrderThunk({
           shippingAddress,
           // Utilisation de la nouvelle logique ici aussi :
@@ -591,6 +606,22 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
           shipping_method_details: shippingDetailsPayload,
         }),
       ).unwrap();
+
+      // Carte soumise à 3D Secure : on termine l'authentification avec
+      // Stripe, puis le serveur relit le paiement. Il est appelé même si
+      // l'authentification échoue : c'est lui qui marque la commande échouée
+      // et restitue le stock.
+      if (data.requires_action) {
+        await stripe.handleCardAction(data.client_secret);
+
+        data = await dispatch(
+          confirmOrderPaymentThunk({
+            order_id: data.order_id,
+            order_key: data.order_key,
+            payment_intent_id: data.payment_intent_id,
+          }),
+        ).unwrap();
+      }
 
       dispatch(showToast(t("order.confirmedToast", { id: data.order_id })));
       dispatch(emptyCartThunk());
@@ -681,6 +712,7 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
             <div className="stripe-elements-box">
               <CardElement
                 options={{
+                  hidePostalCode: true,
                   style: {
                     base: {
                       fontSize: "16px",

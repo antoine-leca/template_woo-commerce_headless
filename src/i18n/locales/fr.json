@@ -244,6 +244,18 @@
     "ordersFetch": "Impossible de récupérer les commandes.",
     "page": "Impossible de récupérer la page.",
     "pageNotFound": "Page non trouvée",
+    "payment": {
+      "authentication_failed": "L'authentification de la carte a échoué.",
+      "declined": "Votre carte a été refusée. Essayez une autre carte ou contactez votre banque.",
+      "expired_card": "Cette carte est expirée.",
+      "generic": "Le paiement n'a pas pu être finalisé.",
+      "incorrect_cvc": "Le code de sécurité (CVC) de la carte est incorrect.",
+      "incorrect_number": "Le numéro de carte est invalide.",
+      "insufficient_funds": "Fonds insuffisants sur cette carte.",
+      "invalid_expiry": "La date d'expiration de la carte est invalide.",
+      "processing_error": "Une erreur est survenue lors du traitement de la carte. Veuillez réessayer.",
+      "unavailable": "Le service de paiement est momentanément indisponible. Veuillez réessayer dans quelques instants."
+    },
     "product": "Impossible de récupérer le produit.",
     "products": "Impossible de récupérer les produits.",
     "profileFetch": "Impossible de récupérer le profil.",
