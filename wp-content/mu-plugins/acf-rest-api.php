@@ -5,17 +5,9 @@
  * Version: 1.0
  */
 
-function expose_acf_to_rest() {
-  // Route debug pour voir tous les metadata
-  register_rest_route('acf/v1', '/debug/(?P<post_id>\d+)', array(
-    'methods' => 'GET',
-    'callback' => function($request) {
-      $post_id = $request['post_id'];
-      return get_post_meta($post_id);
-    },
-    'permission_callback' => '__return_true'
-  ));
-}
+// La route de debug acf/v1/debug/<id>, qui renvoyait sans authentification
+// toutes les métadonnées de n'importe quel contenu (adresses et téléphones des
+// commandes compris), a été supprimée.
 
 function add_acf_to_rest_response($response, $post, $request) {
   $post_id = $post->ID;
@@ -30,5 +22,4 @@ function add_acf_to_rest_response($response, $post, $request) {
   return $response;
 }
 
-add_action('rest_api_init', 'expose_acf_to_rest');
 add_filter('rest_prepare_page', 'add_acf_to_rest_response', 10, 3);

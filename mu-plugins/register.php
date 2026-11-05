@@ -14,7 +14,9 @@ add_action('rest_api_init', function () {
 
 function headless_register_rate_limit_check()
 {
-    $ip  = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'unknown';
+    $ip  = function_exists('headless_client_ip')
+        ? headless_client_ip()
+        : (isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'unknown');
     $key = 'headless_register_' . md5($ip);
 
     $attempts = (int) get_transient($key);
@@ -46,6 +48,9 @@ function headless_register_user($request)
     }
     if (strlen($password) < 8) {
         return new WP_Error('weak_password', 'Le mot de passe doit contenir au moins 8 caracteres.', ['status' => 400]);
+    }
+    if (strlen($password) > 128) {
+        return new WP_Error('password_too_long', 'Le mot de passe ne doit pas depasser 128 caracteres.', ['status' => 400]);
     }
     if (email_exists($email)) {
         return new WP_Error('email_exists', 'Un compte existe deja avec cet email.', ['status' => 409]);

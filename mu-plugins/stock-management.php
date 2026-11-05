@@ -24,7 +24,10 @@ add_action('rest_api_init', function () {
 
 function headless_check_admin_capability()
 {
-    return current_user_can('manage_woocommerce_products');
+    // « manage_woocommerce_products » n'existe pas dans WooCommerce : personne
+    // ne l'avait, et la route était inutilisable. manage_woocommerce est le
+    // droit des gérants de boutique et des administrateurs.
+    return current_user_can('manage_woocommerce');
 }
 
 function headless_get_product_stock($request)
