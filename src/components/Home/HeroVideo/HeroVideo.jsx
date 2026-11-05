@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import styles from "./HeroVideo.module.scss";
-import raviVideo from "../../../assets/videos/ravi.mp4";
 
 // Le fondu est calé sur la course du catalogue, seul maître de ce qui reste
 // visible : son bord haut entre par le bas de l'écran après 30 vh de

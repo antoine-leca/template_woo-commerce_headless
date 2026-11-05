@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Storefront WooCommerce</title>
     <meta name="description" content="Front-end React connecté à WooCommerce" />
+    <!-- Styles des blocs WordPress (pages de contenu). Chargés sans bloquer
+         l'affichage : unpkg.com est un service externe dont la lenteur ne doit
+         pas retarder toute la page. -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://unpkg.com/@wordpress/block-library@8/build-style/style.css"
+      media="print"
+      onload="this.media = 'all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/@wordpress/block-library@8/build-style/style.css"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
