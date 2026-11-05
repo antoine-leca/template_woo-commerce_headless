@@ -556,6 +556,10 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
     const billingForStripe = effectiveSameAsBilling
       ? shippingAddress
       : billingAddress;
+    // Stripe n'accepte que le code à 2 lettres, jamais un nom de pays.
+    const stripeCountry = /^[A-Za-z]{2}$/.test(billingForStripe.country || "")
+      ? billingForStripe.country.toUpperCase()
+      : undefined;
 
     const { paymentMethod, error: stripeError } =
       await stripe.createPaymentMethod({
@@ -569,7 +573,7 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
             line1: billingForStripe.address_1 || undefined,
             city: billingForStripe.city || undefined,
             postal_code: billingForStripe.postcode || undefined,
-            country: billingForStripe.country || undefined,
+            country: stripeCountry,
           },
         },
       });
@@ -732,8 +736,12 @@ export default function CheckoutForm({ shippingMethod, setShippingMethod }) {
           )}
         </div>
 
+        {/* role="alert" : le lecteur d'écran annonce l'erreur dès qu'elle
+            apparaît, sans que l'utilisateur ait à la chercher dans la page. */}
         {error && (
-          <div style={{ color: "red", marginTop: "10px" }}>{error}</div>
+          <div role="alert" style={{ color: "red", marginTop: "10px" }}>
+            {error}
+          </div>
         )}
 
         <button

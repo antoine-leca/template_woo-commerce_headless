@@ -47,3 +47,20 @@
   margin: 0;
   font-family: var(--font-wordmark);
 }
+
+// Bouton pause : la vidéo démarre seule et tourne en boucle, une personne doit
+// pouvoir l'arrêter (WCAG 2.2.2). Au-dessus du titre, accessible au clavier.
+.pauseButton {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid $white;
+  background: rgba(15, 23, 42, 0.65);
+  color: $white;
+  font: inherit;
+  cursor: pointer;
+}

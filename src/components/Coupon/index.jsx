@@ -30,6 +30,10 @@ export default function Coupon() {
     <>
       <form onSubmit={applyCoupon}>
         <input
+          name="coupon"
+          autoComplete="off"
+          maxLength={50}
+          aria-label={t("coupon.placeholder")}
           placeholder={t("coupon.placeholder")}
           value={code}
           onChange={(e) => setCode(e.target.value)}

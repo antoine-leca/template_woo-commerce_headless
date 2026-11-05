@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
@@ -14,6 +14,7 @@ import {
 import ResetPasswordForm from "../ResetPasswordForm/ResetPasswordForm";
 import "./index.css";
 import { useTranslation } from "react-i18next";
+import useDialogFocus from "../../hooks/useDialogFocus";
 
 // Rattache le message du serveur au champ qu'il concerne. Fonction pure, donc
 // hors du composant : déclarée dans son corps après `if (!isOpen) return null`,
@@ -50,6 +51,7 @@ export default function AuthDrawer() {
   const { isOpen, view, redirectTo } = useSelector((state) => state.authModal);
   const { loading, isAuthenticated } = useSelector((state) => state.user);
 
+  const drawerRef = useRef(null);
   const [mode, setMode] = useState("login");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
@@ -113,6 +115,13 @@ export default function AuthDrawer() {
       setErrors({});
     }
   }, [isOpen, view]);
+
+  // Focus, Tab, Échap et retour du focus : les hooks passent avant le retour
+  // anticipé ci-dessous.
+  useDialogFocus(drawerRef, {
+    active: isOpen,
+    onClose: () => dispatch(closeAuthModal()),
+  });
 
   if (!isOpen) return null;
 
@@ -225,8 +234,18 @@ export default function AuthDrawer() {
 
   return (
     <div className="drawer-backdrop" onClick={close}>
-      <div className="drawer-content" onClick={stopPropagation}>
-        <button className="close-btn" onClick={close}>
+      <div
+        ref={drawerRef}
+        className="drawer-content"
+        onClick={stopPropagation}
+        role="dialog"
+        aria-modal="true"
+        aria-label={
+          mode === "login" ? t("auth.loginTitle") : t("auth.createAccountTitle")
+        }
+        tabIndex={-1}
+      >
+        <button className="close-btn" onClick={close} aria-label={t("common.close")}>
           ✕
         </button>
 
@@ -241,7 +260,7 @@ export default function AuthDrawer() {
             </div>
 
             {errors.general && (
-              <div className="error-message" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.general) }} />
+              <div role="alert" className="error-message" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.general) }} />
             )}
 
             <form className="drawer-form" onSubmit={handleSubmit}>
@@ -255,10 +274,13 @@ export default function AuthDrawer() {
                     value={form.username}
                     onChange={handleChange}
                     className={errors.username ? "input-error" : ""}
+                    aria-invalid={errors.username ? "true" : undefined}
+                    aria-describedby={errors.username ? "username-error" : undefined}
                     placeholder={t("auth.loginPlaceholder")}
                     autoComplete="username"
+                    maxLength={100}
                   />
-                  {errors.username && <p className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.username) }} />}
+                  {errors.username && <p id="username-error" role="alert" className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.username) }} />}
                   <p className="help-text">
                     {t("auth.loginHint")}
                   </p>
@@ -275,10 +297,13 @@ export default function AuthDrawer() {
                     value={form.email}
                     onChange={handleChange}
                     className={errors.email ? "input-error" : ""}
+                    aria-invalid={errors.email ? "true" : undefined}
+                    aria-describedby={errors.email ? "email-error" : undefined}
                     placeholder={t("auth.emailPlaceholder")}
                     autoComplete="email"
+                    maxLength={254}
                   />
-                  {errors.email && <p className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.email) }} />}
+                  {errors.email && <p id="email-error" role="alert" className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.email) }} />}
                 </div>
               )}
 
@@ -292,10 +317,13 @@ export default function AuthDrawer() {
                     value={form.firstName}
                     onChange={handleChange}
                     className={errors.firstName ? "input-error" : ""}
+                    aria-invalid={errors.firstName ? "true" : undefined}
+                    aria-describedby={errors.firstName ? "firstname-error" : undefined}
                     placeholder={t("auth.firstNamePlaceholder")}
                     autoComplete="given-name"
+                    maxLength={100}
                   />
-                  {errors.firstName && <p className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.firstName) }} />}
+                  {errors.firstName && <p id="firstname-error" role="alert" className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.firstName) }} />}
                 </div>
               )}
 
@@ -309,10 +337,13 @@ export default function AuthDrawer() {
                     value={form.lastName}
                     onChange={handleChange}
                     className={errors.lastName ? "input-error" : ""}
+                    aria-invalid={errors.lastName ? "true" : undefined}
+                    aria-describedby={errors.lastName ? "lastname-error" : undefined}
                     placeholder={t("auth.lastNamePlaceholder")}
                     autoComplete="family-name"
+                    maxLength={100}
                   />
-                  {errors.lastName && <p className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.lastName) }} />}
+                  {errors.lastName && <p id="lastname-error" role="alert" className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.lastName) }} />}
                 </div>
               )}
 
@@ -322,10 +353,13 @@ export default function AuthDrawer() {
                   <input
                     id="password"
                     name="password"
+                    maxLength={128}
                     type={showPassword ? "text" : "password"}
                     value={form.password}
                     onChange={handleChange}
                     className={errors.password ? "input-error" : ""}
+                    aria-invalid={errors.password ? "true" : undefined}
+                    aria-describedby={errors.password ? "password-error" : undefined}
                     placeholder="••••••••"
                     autoComplete={
                       mode === "login" ? "current-password" : "new-password"
@@ -340,7 +374,7 @@ export default function AuthDrawer() {
                     {renderEyeIcon()}
                   </button>
                 </div>
-                {errors.password && <p className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.password) }} />}
+                {errors.password && <p id="password-error" role="alert" className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.password) }} />}
                 {mode === "register" && (
                   <div className="password-strength">
                     <div className="strength-bar">
@@ -365,10 +399,13 @@ export default function AuthDrawer() {
                     <input
                       id="confirmPassword"
                       name="confirmPassword"
+                      maxLength={128}
                       type={showPassword ? "text" : "password"}
                       value={form.confirmPassword}
                       onChange={handleChange}
                       className={errors.confirmPassword ? "input-error" : ""}
+                      aria-invalid={errors.confirmPassword ? "true" : undefined}
+                      aria-describedby={errors.confirmPassword ? "confirmpassword-error" : undefined}
                       placeholder="••••••••"
                       autoComplete="new-password"
                     />
@@ -381,7 +418,7 @@ export default function AuthDrawer() {
                       {renderEyeIcon()}
                     </button>
                   </div>
-                  {errors.confirmPassword && <p className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.confirmPassword) }} />}
+                  {errors.confirmPassword && <p id="confirmpassword-error" role="alert" className="error-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(errors.confirmPassword) }} />}
                 </div>
               )}
 

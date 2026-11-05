@@ -8,6 +8,8 @@ export default function ContactForm() {
     name: "",
     email: "",
     message: "",
+    // Champ piège (voir plus bas) : toujours vide chez un vrai visiteur.
+    website: "",
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -42,7 +44,7 @@ export default function ContactForm() {
 
       if (data.success) {
         setSuccess(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", website: "" });
         setTimeout(() => setSuccess(false), 5000);
       } else {
         if (data.errors) {
@@ -61,13 +63,19 @@ export default function ContactForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       {success && (
-        <div className="contact-form__message contact-form__message--success">
+        <div
+          role="status"
+          className="contact-form__message contact-form__message--success"
+        >
           {t("contact.sent")}
         </div>
       )}
 
       {errors.general && (
-        <div className="contact-form__message contact-form__message--error">
+        <div
+          role="alert"
+          className="contact-form__message contact-form__message--error"
+        >
           {errors.general}
         </div>
       )}
@@ -82,9 +90,17 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder={t("contact.namePlaceholder")}
           disabled={loading}
+          autoComplete="name"
+          maxLength={100}
+          aria-required="true"
           aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? "name-error" : undefined}
         />
-        {errors.name && <span className="contact-form__error">{errors.name}</span>}
+        {errors.name && (
+          <span id="name-error" role="alert" className="contact-form__error">
+            {errors.name}
+          </span>
+        )}
       </div>
 
       <div className="contact-form__group">
@@ -97,9 +113,17 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder={t("auth.emailPlaceholder")}
           disabled={loading}
+          autoComplete="email"
+          maxLength={254}
+          aria-required="true"
           aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? "email-error" : undefined}
         />
-        {errors.email && <span className="contact-form__error">{errors.email}</span>}
+        {errors.email && (
+          <span id="email-error" role="alert" className="contact-form__error">
+            {errors.email}
+          </span>
+        )}
       </div>
 
       <div className="contact-form__group">
@@ -112,9 +136,32 @@ export default function ContactForm() {
           placeholder={t("contact.messagePlaceholder")}
           rows="6"
           disabled={loading}
+          maxLength={5000}
+          aria-required="true"
           aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? "message-error" : undefined}
         />
-        {errors.message && <span className="contact-form__error">{errors.message}</span>}
+        {errors.message && (
+          <span id="message-error" role="alert" className="contact-form__error">
+            {errors.message}
+          </span>
+        )}
+      </div>
+
+      {/* Champ piège : hors écran, ignoré des lecteurs d'écran et du clavier.
+          Un robot qui remplit tous les champs le remplit aussi, et le serveur
+          écarte alors le message sans rien envoyer. */}
+      <div className="contact-form__trap" aria-hidden="true">
+        <label htmlFor="website">website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       <button type="submit" className="contact-form__button" disabled={loading}>

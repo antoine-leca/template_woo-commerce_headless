@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import DOMPurify from "dompurify";
 import { addProductToCart } from "../../thunkActionsCreator/cartThunks";
@@ -7,6 +7,8 @@ import "./index.css";
 import ProductGallery from "./ProductGallery";
 import { formatPrice } from "../../utils/formatPrice";
 import { useTranslation } from "react-i18next";
+import useDialogFocus from "../../hooks/useDialogFocus";
+import { decodeHtml } from "../../utils/decodeHtml";
 import {
   getAttributeOptions,
   getDefaultSelection,
@@ -24,6 +26,9 @@ import {
 } from "../../utils/localizeProduct";
 
 export default function ProductModal({ product, onClose }) {
+  const dialogRef = useRef(null);
+  // Focus, Tab, Échap et retour du focus à la carte qui a ouvert la fenêtre.
+  useDialogFocus(dialogRef, { onClose });
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const [itemVariation, setItemVariation] = useState({});
@@ -127,7 +132,15 @@ export default function ProductModal({ product, onClose }) {
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-content" onClick={stopPropagation}>
+      <div
+        ref={dialogRef}
+        className="modal-content"
+        onClick={stopPropagation}
+        role="dialog"
+        aria-modal="true"
+        aria-label={decodeHtml(product.name || "")}
+        tabIndex={-1}
+      >
         <button
           className="close-btn"
           onClick={onClose}

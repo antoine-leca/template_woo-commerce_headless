@@ -1,4 +1,10 @@
 {
+  "a11y": {
+    "homeTitle": "Home",
+    "pauseVideo": "Pause the video",
+    "playVideo": "Play the video",
+    "skipToContent": "Skip to main content"
+  },
   "account": {
     "addressBook": "Address book",
     "deleteConfirm": "Confirm deletion",
@@ -392,6 +398,21 @@
     "articlePlaceholder": "Search for an item…",
     "label": "Search",
     "placeholder": "Search…"
+  },
+  "seo": {
+    "cart": "Cart",
+    "catalog": "Catalog",
+    "catalogDescription": "Browse all our products and filter by category, price or size.",
+    "checkout": "Checkout",
+    "contact": "Contact",
+    "contactDescription": "A question about a product or an order? Write to us, we reply quickly.",
+    "home": "Home",
+    "homeDescription": "Browse our catalog and order online, with pick-up point or home delivery.",
+    "newPassword": "New password",
+    "notFound": "Page not found",
+    "profile": "My account",
+    "success": "Order confirmed",
+    "wishlist": "My wishlist"
   },
   "social": {
     "instagram": "RAVI on Instagram",

@@ -46,13 +46,25 @@ import Footer from "./components/Footer";
 import Toast from "./components/Toast";
 import ScrollToTop from "./components/ScrollToTop";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SkipLink from "./components/SkipLink";
 import AppLoader from "./components/AppLoader/AppLoader";
 // import AuthModal from "./components/AuthModal";
 
 import "./index.css";
 import "./styles/page-transition.css";
+import "./styles/a11y.css";
 import AuthDrawer from "./components/AuthDrawer";
 import Checkout from "./pages/Checkout";
+
+// Styles des blocs WordPress, pour les pages de contenu (mentions légales,
+// FAQ...). Ajoutés par script plutôt que par une balise <link> dans
+// index.html : unpkg.com est un service externe, sa lenteur ne doit pas
+// retarder l'affichage de toute la page.
+const blockLibraryStyles = document.createElement("link");
+blockLibraryStyles.rel = "stylesheet";
+blockLibraryStyles.href =
+  "https://unpkg.com/@wordpress/block-library@8/build-style/style.css";
+document.head.appendChild(blockLibraryStyles);
 
 async function initializeApp() {
   // Ancien emplacement du JWT, avant son passage en cookie HttpOnly : on ne
@@ -131,6 +143,7 @@ function mountApp() {
             v7_relativeSplatPath: true,
           }}
         >
+          <SkipLink />
           <ScrollToTop />
           <Seo />
           <Routes>

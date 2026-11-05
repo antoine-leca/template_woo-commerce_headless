@@ -119,3 +119,13 @@
     margin: 20px 15px;
   }
 }
+
+/* Champ piège anti-robots : hors de l'écran (pas display:none, que certains
+   robots savent ignorer), inaccessible au clavier et aux lecteurs d'écran. */
+.contact-form__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

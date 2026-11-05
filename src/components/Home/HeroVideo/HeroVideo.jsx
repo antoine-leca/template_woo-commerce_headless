@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import styles from "./HeroVideo.module.scss";
 
 // Le fondu est calé sur la course du catalogue, seul maître de ce qui reste
@@ -17,8 +18,17 @@ import styles from "./HeroVideo.module.scss";
 const FADE_START_RATIO = 0.3;
 const FADE_DURATION_RATIO = 1;
 
+// Personne qui a demandé de réduire les animations dans son système : la vidéo
+// ne démarre pas seule, elle reste sur sa première image.
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 export default function HeroVideo() {
+  const { t } = useTranslation();
   const heroRef = useRef(null);
+  const videoRef = useRef(null);
+  const [paused, setPaused] = useState(prefersReducedMotion);
   const siteSettings = useSelector((state) => state.site.siteSettings);
   const heroVideo = siteSettings?.heroVideo;
   const heroTitle = siteSettings?.heroTitle;
@@ -63,18 +73,41 @@ export default function HeroVideo() {
     };
   }, []);
 
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+    setPaused(!paused);
+  };
+
   return (
     <div className={styles.heroSpacer}>
       <div ref={heroRef} className={styles.hero}>
         <video
+          ref={videoRef}
           className={styles.video}
-          autoPlay
+          autoPlay={!paused}
+          aria-hidden="true"
           playsInline
           loop
           muted
           src={heroVideo}
         />
-        <h1 className={styles.title}>{heroTitle}</h1>
+        {/* Le h1 de la page d'accueil est ici quand le titre est renseigné ;
+            sinon Home affiche un titre masqué (un seul h1 par page). */}
+        {heroTitle && <h1 className={styles.title}>{heroTitle}</h1>}
+        <button
+          type="button"
+          className={styles.pauseButton}
+          onClick={togglePlayback}
+        >
+          {paused ? t("a11y.playVideo") : t("a11y.pauseVideo")}
+        </button>
       </div>
     </div>
   );

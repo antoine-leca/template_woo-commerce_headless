@@ -130,16 +130,24 @@ export default function UserInfo() {
     );
   if (error) return <p style={{ color: "red" }}>Erreur: {error}</p>;
 
+  // En édition l'intitulé est le libellé du champ (htmlFor) ; en lecture il
+  // n'y a pas de champ, un <span> suffit.
+  const Label = isEditing ? "label" : "span";
+
   return (
     <div>
       <h2 className="section-title">{t("account.personalInfo")}</h2>
       <div className="data-grid">
         <div className="data-item">
-          <span className="data-label">{t("common.firstName")}</span>
+          <Label className="data-label" {...(isEditing && { htmlFor: "profile-firstname" })}>
+            {t("common.firstName")}
+          </Label>
           {isEditing ? (
             <input
+              id="profile-firstname"
               type="text"
               name="firstName"
+              autoComplete="given-name"
               value={formData.firstName}
               onChange={handleChange}
               className="data-input"
@@ -150,11 +158,15 @@ export default function UserInfo() {
         </div>
 
         <div className="data-item">
-          <span className="data-label">{t("common.lastName")}</span>
+          <Label className="data-label" {...(isEditing && { htmlFor: "profile-lastname" })}>
+            {t("common.lastName")}
+          </Label>
           {isEditing ? (
             <input
+              id="profile-lastname"
               type="text"
               name="lastName"
+              autoComplete="family-name"
               value={formData.lastName}
               onChange={handleChange}
               className="data-input"
@@ -165,11 +177,15 @@ export default function UserInfo() {
         </div>
 
         <div className="data-item">
-          <span className="data-label">{t("common.email")}</span>
+          <Label className="data-label" {...(isEditing && { htmlFor: "profile-email" })}>
+            {t("common.email")}
+          </Label>
           {isEditing ? (
             <input
+              id="profile-email"
               type="email"
               name="email"
+              autoComplete="email"
               value={formData.email}
               onChange={handleChange}
               className="data-input"
@@ -180,11 +196,16 @@ export default function UserInfo() {
         </div>
 
         <div className="data-item">
-          <span className="data-label">{t("common.password")}</span>
+          <Label className="data-label" {...(isEditing && { htmlFor: "profile-password" })}>
+            {t("common.password")}
+          </Label>
           {isEditing ? (
             <input
+              id="profile-password"
               type="password"
               name="password"
+              autoComplete="new-password"
+              maxLength={128}
               value={formData.password}
               onChange={handleChange}
               className="data-input"
@@ -240,6 +261,9 @@ export default function UserInfo() {
             </p>
             <input
               type="password"
+              autoComplete="current-password"
+              aria-label={t("common.password")}
+              maxLength={128}
               value={deletePassword}
               onChange={(e) => setDeletePassword(e.target.value)}
               placeholder={t("account.passwordPlaceholder")}

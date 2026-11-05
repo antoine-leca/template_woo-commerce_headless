@@ -1,4 +1,10 @@
 {
+  "a11y": {
+    "homeTitle": "Accueil",
+    "pauseVideo": "Mettre la vidéo en pause",
+    "playVideo": "Lancer la vidéo",
+    "skipToContent": "Aller au contenu principal"
+  },
   "account": {
     "addressBook": "Carnet d'adresses",
     "deleteConfirm": "Confirmer la suppression",
@@ -392,6 +398,21 @@
     "articlePlaceholder": "Rechercher un article…",
     "label": "Rechercher",
     "placeholder": "Rechercher…"
+  },
+  "seo": {
+    "cart": "Panier",
+    "catalog": "Catalogue",
+    "catalogDescription": "Parcourez tous nos produits et filtrez par catégorie, prix ou taille.",
+    "checkout": "Commande",
+    "contact": "Contact",
+    "contactDescription": "Une question sur un produit ou une commande ? Écrivez-nous, nous vous répondons rapidement.",
+    "home": "Accueil",
+    "homeDescription": "Découvrez notre catalogue et commandez en ligne, livraison en point relais ou à domicile.",
+    "newPassword": "Nouveau mot de passe",
+    "notFound": "Page introuvable",
+    "profile": "Mon compte",
+    "success": "Commande confirmée",
+    "wishlist": "Mes favoris"
   },
   "social": {
     "instagram": "RAVI sur Instagram",

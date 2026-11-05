@@ -42,7 +42,7 @@ export default function CatalogSection({
       id={HOME_CATALOG_ANCHOR}
     >
       <Header />
-      <main className={styles.main}>
+      <main id="main-content" tabIndex={-1} className={styles.main}>
         <FilterBar
           onFilterChange={setFilter}
           hasProducts={filteredProducts.length > 0 || loading}

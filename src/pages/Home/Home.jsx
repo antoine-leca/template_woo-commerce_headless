@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import HeroVideo from "../../components/Home/HeroVideo/HeroVideo";
 import CatalogSection from "../../components/Home/CatalogSection/CatalogSection";
 import { fetchProductsThunk } from "../../thunkActionsCreator/productsThunks";
@@ -16,6 +17,9 @@ export default function Home() {
   const loading = useSelector((state) => state.products.loading);
   const siteSettings = useSelector((state) => state.site.siteSettings);
   const heroVideo = siteSettings?.heroVideo;
+  const heroTitle = siteSettings?.heroTitle;
+  const siteName = useSelector((state) => state.site.name);
+  const { t } = useTranslation();
 
   useEffect(() => {
     document.body.classList.add("home-page");
@@ -52,6 +56,11 @@ export default function Home() {
     // lui-même le fondu d'arrivée. Aucune clé n'est nécessaire — on ne peut
     // atteindre cette page qu'en la montant.
     <div className={`${styles.home} page-transition`}>
+      {/* Un seul h1 par page : celui de la vidéo quand elle a un titre, sinon
+          un titre réservé aux lecteurs d'écran. */}
+      {!(heroVideo && heroTitle) && (
+        <h1 className="visually-hidden">{siteName || t("a11y.homeTitle")}</h1>
+      )}
       {heroVideo && <HeroVideo />}
       <CatalogSection
         products={displayedProducts || []}

@@ -97,8 +97,20 @@ export default function ProductGrid({ products, filter, onProductClick }) {
               <div
                 key={product.id}
                 className={`${styles.card} ${!inStock ? styles.outOfStockCard : ""}`}
+                // Une carte qui s'ouvre au clic doit aussi s'ouvrir au clavier :
+                // role="button" + tabIndex la rendent atteignable par Tab, et
+                // Entrée ou Espace l'activent comme un bouton natif.
+                role="button"
+                tabIndex={inStock ? 0 : undefined}
+                aria-disabled={!inStock ? "true" : undefined}
                 onClick={() => {
                   if (inStock) {
+                    onProductClick(product);
+                  }
+                }}
+                onKeyDown={(event) => {
+                  if (inStock && (event.key === "Enter" || event.key === " ")) {
+                    event.preventDefault();
                     onProductClick(product);
                   }
                 }}

@@ -28,7 +28,12 @@ export default function MainLayout() {
           La classe est posée sur ce <main> plutôt que sur une enveloppe :
           `.cart-state` reprend sa hauteur avec `min-height: inherit`, et un
           élément intercalé la ramènerait à zéro. */}
-      <main key={pathname} className="main-layout__content page-transition">
+      <main
+        key={pathname}
+        id="main-content"
+        tabIndex={-1}
+        className="main-layout__content page-transition"
+      >
         <Outlet />
       </main>
       <Footer />
