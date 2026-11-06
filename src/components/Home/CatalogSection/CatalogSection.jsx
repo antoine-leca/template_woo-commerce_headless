@@ -56,7 +56,13 @@ export default function CatalogSection({
         id={HOME_CATALOG_ANCHOR}
       >
         <Header />
-        <main id="main-content" tabIndex={-1} className={styles.main} />
+        <main id="main-content" tabIndex={-1} className={styles.main}>
+          {/* Le header est là, le reste attend les réglages : un loader évite
+              une page vide entre les deux. */}
+          <div className={styles.loaderContainer}>
+            <Loader size="lg" />
+          </div>
+        </main>
       </div>
     );
   }
