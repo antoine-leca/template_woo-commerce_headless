@@ -112,11 +112,22 @@ function headless_is_rest_request_uri()
 
 // Avant jwt-auth (priorité 10) : on lui présente le cookie comme s'il
 // s'agissait d'un en-tête Authorization.
+//
+// Les requêtes de l'administration WordPress (éditeur de pages, réglages
+// WooCommerce...) portent un en-tête X-WP-Nonce : elles s'authentifient par la
+// session WordPress, pas par ce cookie. Sans cette exception, un navigateur qui
+// a aussi ouvert une session sur le front (même domaine, donc même cookie
+// wc_auth) voyait l'admin agir sous l'identité du compte du front et se faire
+// refuser chaque enregistrement (« Jeton de sécurité invalide »), faute du
+// jeton X-CSRF-Token que seul le front envoie. Ce n'est pas une brèche CSRF :
+// un autre site ne peut pas ajouter cet en-tête sans autorisation CORS, et
+// WordPress vérifie alors lui-même le nonce.
 add_filter('determine_current_user', function ($user) {
     if (
         empty($_COOKIE[HEADLESS_AUTH_COOKIE])
         || !empty($_SERVER['HTTP_AUTHORIZATION'])
         || !empty($_SERVER['REDIRECT_HTTP_AUTHORIZATION'])
+        || !empty($_SERVER['HTTP_X_WP_NONCE'])
         || !headless_is_rest_request_uri()
     ) {
         return $user;
