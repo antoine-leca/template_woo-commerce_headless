@@ -12,6 +12,12 @@ import { setFilters } from "../../../slices/filtersSlice";
 import SegmentedControl from "../../SegmentedControl";
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from "../../../i18n";
 import { useTranslation } from "react-i18next";
+import { getProductName } from "../../../utils/localizeProduct";
+import { searchProducts } from "../../../utils/searchProducts";
+import { fetchSearchIndex } from "../../../utils/searchIndex";
+
+// Attente après la dernière frappe avant de recharger le catalogue.
+const SEARCH_DEBOUNCE_MS = 200;
 
 // Durée et courbe communes à toutes les animations de la barre (le SCSS
 // reprend les mêmes valeurs : 0.45s et cubic-bezier(0.22, 1, 0.36, 1)).
@@ -36,8 +42,12 @@ export default function FilterBar({ onFilterChange, hasProducts }) {
   // La barre est « ouverte » dès le clic ; la mise en page à deux lignes
   // (filtres dessous) ne se défait qu'une fois la barre repliée.
   const [layoutOpen, setLayoutOpen] = useState(false);
+  const [searchIndex, setSearchIndex] = useState([]);
+  const [searchIndexReady, setSearchIndexReady] = useState(false);
 
   const products = useSelector((state) => state.products.list.data);
+  const productsLoading = useSelector((state) => state.products.loading);
+  const [searchDebouncing, setSearchDebouncing] = useState(false);
 
   // Le libellé d'un filtre dans la langue affichée, et dans toutes les langues
   // du site : le contrôle réserve la largeur du plus long, et ne change donc
@@ -86,15 +96,67 @@ export default function FilterBar({ onFilterChange, hasProducts }) {
 
     if (filterId === "tous" && !hasProducts) {
       setSearchQuery("");
-      dispatch(setFilters({ search: "" }));
+      dispatch(setFilters({ search: "", include: "" }));
     }
   };
 
-  const handleSearchChange = (e) => {
-    const value = e.target.value;
-    setSearchQuery(value);
-    dispatch(setFilters({ search: value }));
-  };
+  // Recherche tolérante : le texte tapé ne part pas à WordPress (« tshirt » ne
+  // trouverait pas « T-SHIRT »). On le compare nous-mêmes au catalogue complet
+  // (voir utils/searchProducts.js).
+  const language = i18n.resolvedLanguage;
+  const entries = useMemo(
+    () =>
+      searchIndex.map((product) => ({
+        id: product.id,
+        name: getProductName(product, language),
+        texts: [
+          product.name,
+          ...Object.values(product.translations || {}).map((tr) => tr?.name),
+          ...product.categories,
+        ].filter(Boolean),
+      })),
+    [searchIndex, language],
+  );
+  const matches = useMemo(
+    () => searchProducts(entries, searchQuery),
+    [entries, searchQuery],
+  );
+
+  const handleSearchChange = (e) => setSearchQuery(e.target.value);
+
+  // Les correspondances restent « derrière » : aucune liste n'est affichée, le
+  // catalogue lui-même se réduit aux produits trouvés, au fil de la frappe.
+  // Aucune correspondance : l'identifiant 0 n'existe pas, le catalogue est vide
+  // (un `include` vide, lui, afficherait tout).
+  useEffect(() => {
+    if (!searchOpen) return;
+    if (searchQuery.trim() === "") {
+      setSearchDebouncing(false);
+      dispatch(setFilters({ search: "", include: "" }));
+      return;
+    }
+    if (!searchIndexReady) return;
+    setSearchDebouncing(true);
+    const timer = setTimeout(() => {
+      dispatch(
+        setFilters({
+          search: "",
+          include: matches.length
+            ? matches.map((entry) => entry.id).join(",")
+            : "0",
+        }),
+      );
+      setSearchDebouncing(false);
+    }, SEARCH_DEBOUNCE_MS);
+    return () => clearTimeout(timer);
+  }, [searchOpen, searchQuery, matches, searchIndexReady, dispatch]);
+
+  // Retour visuel : le rond tourne tant que la recherche n'a pas abouti — index
+  // en chargement, attente après la frappe, ou catalogue en cours de rechargement.
+  const searchLoading =
+    searchOpen &&
+    searchQuery.trim() !== "" &&
+    (!searchIndexReady || searchDebouncing || productsLoading);
 
   // Photo de la mise en page avant un changement : hauteur de la rangée et
   // position des filtres. Après le changement, useLayoutEffect rejoue le trajet
@@ -123,7 +185,7 @@ export default function FilterBar({ onFilterChange, hasProducts }) {
     // Le catalogue se remet à jour tout de suite ; le texte, lui, reste affiché
     // le temps du repli pour ne pas se vider à vue.
     setSearchOpen(false);
-    dispatch(setFilters({ search: "" }));
+    dispatch(setFilters({ search: "", include: "" }));
     clearTimerRef.current = setTimeout(() => setSearchQuery(""), SEARCH_MS);
     layoutTimerRef.current = setTimeout(
       () => {
@@ -168,6 +230,24 @@ export default function FilterBar({ onFilterChange, hasProducts }) {
       options,
     );
   }, [layoutOpen]);
+
+  // Le catalogue complet n'est chargé qu'à la première ouverture de la barre.
+  useEffect(() => {
+    if (!searchOpen || searchIndexReady) return;
+    let cancelled = false;
+    fetchSearchIndex()
+      .then((list) => {
+        if (cancelled) return;
+        setSearchIndex(list);
+        setSearchIndexReady(true);
+      })
+      .catch(() => {
+        /* sans catalogue, pas de suggestions : la barre reste inoffensive */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [searchOpen, searchIndexReady]);
 
   // Le champ n'est focalisable qu'une fois activé : on le focalise à l'ouverture.
   useEffect(() => {
@@ -235,7 +315,15 @@ export default function FilterBar({ onFilterChange, hasProducts }) {
               value={searchQuery}
               onChange={handleSearchChange}
               disabled={!searchOpen}
+              autoComplete="off"
             />
+            {searchLoading && (
+              <span
+                className={styles.searchSpinner}
+                role="status"
+                aria-label={t("common.loading")}
+              />
+            )}
           </div>
         </div>
       </div>

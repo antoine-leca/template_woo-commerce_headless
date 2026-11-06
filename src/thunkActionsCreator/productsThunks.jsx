@@ -1,9 +1,20 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { apiError, apiErrorMessage } from "../i18n/apiError";
 
+// Valeur de rejet d'une requête abandonnée parce qu'une plus récente la remplace.
+export const PRODUCTS_FETCH_SUPERSEDED = "superseded";
+
+// Requête de catalogue en cours : une nouvelle l'annule. Pendant une recherche,
+// chaque frappe relance le catalogue ; sans cela, les réponses s'empilent et
+// une réponse ancienne, arrivée en retard, écraserait la bonne.
+let currentProductsRequest = null;
+
 export const fetchProductsThunk = createAsyncThunk(
   "products/fetchAll",
   async (params = {}, thunkAPI) => {
+    currentProductsRequest?.abort();
+    const controller = new AbortController();
+    currentProductsRequest = controller;
     try {
       const page = params.page ? parseInt(params.page, 10) : 1;
       const perPage = params.per_page ? parseInt(params.per_page, 10) : 20;
@@ -36,6 +47,7 @@ export const fetchProductsThunk = createAsyncThunk(
       const response = await fetch(url, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
       });
       if (!response.ok) {
         throw new Error(apiError("errors.products"));
@@ -45,7 +57,12 @@ export const fetchProductsThunk = createAsyncThunk(
 
       return { data, page, perPage, total };
     } catch (error) {
+      if (error.name === "AbortError") {
+        return thunkAPI.rejectWithValue(PRODUCTS_FETCH_SUPERSEDED);
+      }
       return thunkAPI.rejectWithValue(error.message);
+    } finally {
+      if (currentProductsRequest === controller) currentProductsRequest = null;
     }
   },
 );

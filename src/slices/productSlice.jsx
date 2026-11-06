@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 // Importation de la nouvelle action thunk
-import { fetchProductsThunk, fetchProductByIdThunk } from "../thunkActionsCreator/productsThunks";
+import { fetchProductsThunk, fetchProductByIdThunk, PRODUCTS_FETCH_SUPERSEDED } from "../thunkActionsCreator/productsThunks";
 
 export const productsSlice = createSlice({
   name: "products",
@@ -37,6 +37,9 @@ export const productsSlice = createSlice({
         state.list.total = total || 0;
       })
       .addCase(fetchProductsThunk.rejected, (state, action) => {
+        // Requête remplacée par une plus récente : celle-ci est toujours en
+        // cours, ni chargement terminé ni erreur à signaler.
+        if (action.payload === PRODUCTS_FETCH_SUPERSEDED) return;
         state.loading = false;
         state.error = action.payload;
       })

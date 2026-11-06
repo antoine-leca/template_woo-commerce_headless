@@ -107,6 +107,7 @@
 .searchCollapseLayout {
   width: min(500px, calc(100% - 28px - #{$spacing-md}));
   height: auto;
+  overflow: visible;
 }
 
 .searchCollapseInner {
@@ -139,6 +140,34 @@
   align-items: center;
 }
 
+/* Petit rond qui tourne à droite, dans la barre, pendant la recherche. */
+.searchSpinner {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: $text-primary;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: searchSpin 0.7s linear infinite;
+}
+
+@keyframes searchSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .searchSpinner {
+    animation-duration: 2s;
+  }
+}
+
 .inputIcon {
   position: absolute;
   left: 16px;
@@ -148,7 +177,8 @@
 
 .searchInput {
   width: 100%;
-  padding: $spacing-sm $spacing-md $spacing-sm 40px;
+  /* À droite : la place du rond de chargement. */
+  padding: $spacing-sm 44px $spacing-sm 40px;
   border: none;
   font-size: $font-size-base;
   font-family: $font-family;
