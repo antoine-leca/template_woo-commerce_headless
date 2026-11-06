@@ -1,0 +1,120 @@
+{
+    "key": "group_legal_cgv",
+    "title": "Informations légales — CGV",
+    "fields": [
+        {
+            "key": "field_legal_cgv_info",
+            "label": "Information",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p><strong>Valeurs communes à tout le site.<\/strong> Ces champs sont enregistrés une seule fois, sur la page « Paramètres du site » : ce que vous saisissez ici apparaît aussi sur les autres pages légales, en français comme en anglais.<\/p><p>Un champ vide laisse le marqueur <code>[…]<\/code> visible dans le texte de la page.<\/p>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_legal_payment_methods_fr",
+            "label": "Moyens de paiement (FR)",
+            "name": "legal_payment_methods_fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Remplace [Carte bancaire, PayPal, etc.] (CGV, page française).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_legal_payment_methods_en",
+            "label": "Moyens de paiement (EN)",
+            "name": "legal_payment_methods_en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Remplace [Credit card, PayPal, etc.] (CGV, page anglaise).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_legal_delivery_days",
+            "label": "Délai de livraison (jours ouvrables)",
+            "name": "legal_delivery_days",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Remplace [3-5] (CGV). Ex. : 3-5.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "32"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "102"
+            }
+        ]
+    ],
+    "menu_order": 32,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793892605
+}

@@ -1,0 +1,664 @@
+{
+    "key": "group_product_texts",
+    "title": "Textes — Fiche produit",
+    "fields": [
+        {
+            "key": "field_product_tab_fr",
+            "label": "Français",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__product__instock__fr",
+            "label": "product › inStock",
+            "name": "txt__product__inStock__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.inStock. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__lowstock__fr",
+            "label": "product › lowStock",
+            "name": "txt__product__lowStock__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Garder {{count}} tel quel : remplacé automatiquement. Clé du dictionnaire : product.lowStock. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__nosimilar__fr",
+            "label": "product › noSimilar",
+            "name": "txt__product__noSimilar__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.noSimilar. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__outofstock__fr",
+            "label": "product › outOfStock",
+            "name": "txt__product__outOfStock__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.outOfStock. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__price__fr",
+            "label": "product › price",
+            "name": "txt__product__price__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.price. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__pricefrom__fr",
+            "label": "product › priceFrom",
+            "name": "txt__product__priceFrom__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Garder {{price}} tel quel : remplacé automatiquement. Clé du dictionnaire : product.priceFrom. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__priceonrequest__fr",
+            "label": "product › priceOnRequest",
+            "name": "txt__product__priceOnRequest__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.priceOnRequest. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__reference__fr",
+            "label": "product › reference",
+            "name": "txt__product__reference__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.reference. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__similar__fr",
+            "label": "product › similar",
+            "name": "txt__product__similar__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.similar. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__size__fr",
+            "label": "product › attributes › size",
+            "name": "txt__product__attributes__size__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.size. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__color__fr",
+            "label": "product › attributes › color",
+            "name": "txt__product__attributes__color__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.color. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__fit__fr",
+            "label": "product › attributes › fit",
+            "name": "txt__product__attributes__fit__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.fit. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__material__fr",
+            "label": "product › attributes › material",
+            "name": "txt__product__attributes__material__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.material. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__weight__fr",
+            "label": "product › attributes › weight",
+            "name": "txt__product__attributes__weight__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.weight. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__madein__fr",
+            "label": "product › attributes › madeIn",
+            "name": "txt__product__attributes__madeIn__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.madeIn. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_product_tab_en",
+            "label": "English",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__product__instock__en",
+            "label": "product › inStock",
+            "name": "txt__product__inStock__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.inStock. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__lowstock__en",
+            "label": "product › lowStock",
+            "name": "txt__product__lowStock__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Garder {{count}} tel quel : remplacé automatiquement. Clé du dictionnaire : product.lowStock. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__nosimilar__en",
+            "label": "product › noSimilar",
+            "name": "txt__product__noSimilar__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.noSimilar. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__outofstock__en",
+            "label": "product › outOfStock",
+            "name": "txt__product__outOfStock__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.outOfStock. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__price__en",
+            "label": "product › price",
+            "name": "txt__product__price__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.price. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__pricefrom__en",
+            "label": "product › priceFrom",
+            "name": "txt__product__priceFrom__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Garder {{price}} tel quel : remplacé automatiquement. Clé du dictionnaire : product.priceFrom. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__priceonrequest__en",
+            "label": "product › priceOnRequest",
+            "name": "txt__product__priceOnRequest__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.priceOnRequest. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__reference__en",
+            "label": "product › reference",
+            "name": "txt__product__reference__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.reference. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__similar__en",
+            "label": "product › similar",
+            "name": "txt__product__similar__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.similar. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__size__en",
+            "label": "product › attributes › size",
+            "name": "txt__product__attributes__size__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.size. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__color__en",
+            "label": "product › attributes › color",
+            "name": "txt__product__attributes__color__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.color. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__fit__en",
+            "label": "product › attributes › fit",
+            "name": "txt__product__attributes__fit__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.fit. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__material__en",
+            "label": "product › attributes › material",
+            "name": "txt__product__attributes__material__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.material. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__weight__en",
+            "label": "product › attributes › weight",
+            "name": "txt__product__attributes__weight__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.weight. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__product__attributes__madein__en",
+            "label": "product › attributes › madeIn",
+            "name": "txt__product__attributes__madeIn__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : product.attributes.madeIn. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ]
+    ],
+    "menu_order": 12,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793890296
+}

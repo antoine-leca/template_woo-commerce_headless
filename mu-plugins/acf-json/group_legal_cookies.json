@@ -1,0 +1,237 @@
+{
+    "key": "group_legal_cookies",
+    "title": "Informations légales — Cookies",
+    "fields": [
+        {
+            "key": "field_legal_cookies_info",
+            "label": "Information",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p><strong>Valeurs communes à tout le site.<\/strong> Ces champs sont enregistrés une seule fois, sur la page « Paramètres du site » : ce que vous saisissez ici apparaît aussi sur les autres pages légales, en français comme en anglais.<\/p><p>Un champ vide laisse le marqueur <code>[…]<\/code> visible dans le texte de la page.<\/p>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_legal_cookies_updated_fr",
+            "label": "Dernière mise à jour (FR)",
+            "name": "legal_cookies_updated_fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Remplace [JJ MOIS AAAA] (politique des cookies française). Ex. : 5 novembre 2026.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_legal_cookies_updated_en",
+            "label": "Dernière mise à jour (EN)",
+            "name": "legal_cookies_updated_en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Remplace [DD MONTH YYYY]. Ex. : 5 November 2026.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_legal_cookies_durations_fr",
+            "label": "Durées des cookies du prestataire (FR)",
+            "name": "legal_cookies_durations_fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Remplace [DURÉES — VOIR LA DOCUMENTATION DU PRESTATAIRE].",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_legal_cookies_durations_en",
+            "label": "Durées des cookies du prestataire (EN)",
+            "name": "legal_cookies_durations_en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Remplace [DURATION — SEE PROVIDER DOCUMENTATION].",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_legal_cookies_other_fr",
+            "label": "Autres cookies déposés (FR)",
+            "name": "legal_cookies_other_fr",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Remplace [VÉRIFIER DANS L'ONGLET APPLICATION DU NAVIGATEUR…] : les lignes de cookies supplémentaires (nom, finalité, durée).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_legal_cookies_other_en",
+            "label": "Autres cookies déposés (EN)",
+            "name": "legal_cookies_other_en",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Remplace [CHECK THE BROWSER'S APPLICATION TAB…] : les lignes de cookies supplémentaires.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_legal_cookies_audience_fr",
+            "label": "Mesure d'audience et publicité (cookies, FR)",
+            "name": "legal_cookies_audience_fr",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Remplace [À CE JOUR, LA BOUTIQUE N'UTILISE AUCUN OUTIL…] : à remplacer par la description réelle si vous en utilisez.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_legal_cookies_audience_en",
+            "label": "Mesure d'audience et publicité (cookies, EN)",
+            "name": "legal_cookies_audience_en",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Remplace [AS OF NOW, THE STORE DOES NOT USE ANY AUDIENCE MEASUREMENT…].",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_legal_cookies_provider_url",
+            "label": "Adresse de la politique du prestataire",
+            "name": "legal_cookies_provider_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Remplace [URL DE LA POLITIQUE DU PRESTATAIRE] \/ [PROVIDER POLICY URL]. Une adresse complète (https:\/\/…).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "82"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "92"
+            }
+        ]
+    ],
+    "menu_order": 34,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793892605
+}

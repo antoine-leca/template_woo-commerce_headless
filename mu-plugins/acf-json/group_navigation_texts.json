@@ -1,0 +1,824 @@
+{
+    "key": "group_navigation_texts",
+    "title": "Textes — Navigation et pied de page",
+    "fields": [
+        {
+            "key": "field_navigation_tab_fr",
+            "label": "Français",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__footer__rights__fr",
+            "label": "footer › rights",
+            "name": "txt__footer__rights__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Garder {{year}} tel quel : remplacé automatiquement. Clé du dictionnaire : footer.rights. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__about__fr",
+            "label": "header › nav › about",
+            "name": "txt__header__nav__about__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.about. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__contact__fr",
+            "label": "header › nav › contact",
+            "name": "txt__header__nav__contact__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.contact. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__faq__fr",
+            "label": "header › nav › faq",
+            "name": "txt__header__nav__faq__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.faq. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__home__fr",
+            "label": "header › nav › home",
+            "name": "txt__header__nav__home__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.home. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__about__fr",
+            "label": "nav › about",
+            "name": "txt__nav__about__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.about. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__cart__fr",
+            "label": "nav › cart",
+            "name": "txt__nav__cart__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.cart. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__catalogue__fr",
+            "label": "nav › catalogue",
+            "name": "txt__nav__catalogue__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.catalogue. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__cgv__fr",
+            "label": "nav › cgv",
+            "name": "txt__nav__cgv__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.cgv. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__contactus__fr",
+            "label": "nav › contactUs",
+            "name": "txt__nav__contactUs__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.contactUs. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__cookies__fr",
+            "label": "nav › cookies",
+            "name": "txt__nav__cookies__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.cookies. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__faq__fr",
+            "label": "nav › faq",
+            "name": "txt__nav__faq__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.faq. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__home__fr",
+            "label": "nav › home",
+            "name": "txt__nav__home__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.home. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__legal__fr",
+            "label": "nav › legal",
+            "name": "txt__nav__legal__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.legal. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__privacy__fr",
+            "label": "nav › privacy",
+            "name": "txt__nav__privacy__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.privacy. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__terms__fr",
+            "label": "nav › terms",
+            "name": "txt__nav__terms__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.terms. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__termsuse__fr",
+            "label": "nav › termsUse",
+            "name": "txt__nav__termsUse__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.termsUse. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__social__instagram__fr",
+            "label": "social › instagram",
+            "name": "txt__social__instagram__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : social.instagram. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__social__tiktok__fr",
+            "label": "social › tiktok",
+            "name": "txt__social__tiktok__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : social.tiktok. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navigation_tab_en",
+            "label": "English",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__footer__rights__en",
+            "label": "footer › rights",
+            "name": "txt__footer__rights__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Garder {{year}} tel quel : remplacé automatiquement. Clé du dictionnaire : footer.rights. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__about__en",
+            "label": "header › nav › about",
+            "name": "txt__header__nav__about__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.about. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__contact__en",
+            "label": "header › nav › contact",
+            "name": "txt__header__nav__contact__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.contact. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__faq__en",
+            "label": "header › nav › faq",
+            "name": "txt__header__nav__faq__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.faq. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__header__nav__home__en",
+            "label": "header › nav › home",
+            "name": "txt__header__nav__home__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : header.nav.home. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__about__en",
+            "label": "nav › about",
+            "name": "txt__nav__about__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.about. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__cart__en",
+            "label": "nav › cart",
+            "name": "txt__nav__cart__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.cart. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__catalogue__en",
+            "label": "nav › catalogue",
+            "name": "txt__nav__catalogue__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.catalogue. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__cgv__en",
+            "label": "nav › cgv",
+            "name": "txt__nav__cgv__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.cgv. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__contactus__en",
+            "label": "nav › contactUs",
+            "name": "txt__nav__contactUs__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.contactUs. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__cookies__en",
+            "label": "nav › cookies",
+            "name": "txt__nav__cookies__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.cookies. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__faq__en",
+            "label": "nav › faq",
+            "name": "txt__nav__faq__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.faq. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__home__en",
+            "label": "nav › home",
+            "name": "txt__nav__home__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.home. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__legal__en",
+            "label": "nav › legal",
+            "name": "txt__nav__legal__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.legal. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__privacy__en",
+            "label": "nav › privacy",
+            "name": "txt__nav__privacy__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.privacy. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__terms__en",
+            "label": "nav › terms",
+            "name": "txt__nav__terms__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.terms. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__nav__termsuse__en",
+            "label": "nav › termsUse",
+            "name": "txt__nav__termsUse__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : nav.termsUse. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__social__instagram__en",
+            "label": "social › instagram",
+            "name": "txt__social__instagram__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : social.instagram. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__social__tiktok__en",
+            "label": "social › tiktok",
+            "name": "txt__social__tiktok__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : social.tiktok. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793890295
+}

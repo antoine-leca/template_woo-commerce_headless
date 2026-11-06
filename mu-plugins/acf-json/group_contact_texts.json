@@ -1,0 +1,336 @@
+{
+    "key": "group_contact_texts",
+    "title": "Textes — Contact",
+    "fields": [
+        {
+            "key": "field_contact_texts_info",
+            "label": "Information",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p><strong>Textes du formulaire de contact, communs à tout le site.<\/strong> Enregistrés une seule fois, sur la page « Paramètres du site ». Un champ vide garde le texte d'origine.<\/p>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_contact_tab_fr",
+            "label": "Français",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__contact__message__fr",
+            "label": "contact › message",
+            "name": "txt__contact__message__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.message. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__messageplaceholder__fr",
+            "label": "contact › messagePlaceholder",
+            "name": "txt__contact__messagePlaceholder__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.messagePlaceholder. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__name__fr",
+            "label": "contact › name",
+            "name": "txt__contact__name__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.name. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__nameplaceholder__fr",
+            "label": "contact › namePlaceholder",
+            "name": "txt__contact__namePlaceholder__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.namePlaceholder. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__send__fr",
+            "label": "contact › send",
+            "name": "txt__contact__send__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.send. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__sent__fr",
+            "label": "contact › sent",
+            "name": "txt__contact__sent__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.sent. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_contact_tab_en",
+            "label": "English",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__contact__message__en",
+            "label": "contact › message",
+            "name": "txt__contact__message__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.message. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__messageplaceholder__en",
+            "label": "contact › messagePlaceholder",
+            "name": "txt__contact__messagePlaceholder__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.messagePlaceholder. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__name__en",
+            "label": "contact › name",
+            "name": "txt__contact__name__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.name. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__nameplaceholder__en",
+            "label": "contact › namePlaceholder",
+            "name": "txt__contact__namePlaceholder__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.namePlaceholder. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__send__en",
+            "label": "contact › send",
+            "name": "txt__contact__send__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.send. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__contact__sent__en",
+            "label": "contact › sent",
+            "name": "txt__contact__sent__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : contact.sent. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "37"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "114"
+            }
+        ]
+    ],
+    "menu_order": 13,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793892605
+}

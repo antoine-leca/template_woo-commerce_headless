@@ -19,6 +19,11 @@ import {
 } from "./thunkActionsCreator/siteThunk";
 import { setSiteSettings } from "./slices/siteSlice";
 import { saveSiteHints } from "./utils/siteHints";
+import {
+  applySiteTexts,
+  readCachedSiteTexts,
+  updateSiteTexts,
+} from "./i18n/siteTexts";
 
 import Home from "./pages/Home";
 import Store from "./pages/Store";
@@ -81,6 +86,10 @@ function initializeApp() {
   // l'accueil attendent site.siteSettings (voir Header, CatalogSection,
   // ProtectedRoute). Sans cette précaution, l'interface s'afficherait un
   // instant comme pour un invité, ce que l'ancien ordre évitait.
+  // Textes modifiés dans l'admin lors de la visite précédente : appliqués avant
+  // le premier rendu, pour ne pas voir l'ancien texte se faire remplacer.
+  applySiteTexts(readCachedSiteTexts(), { rerender: false });
+
   mountApp();
 
   store.dispatch(initializeCartThunk());
@@ -95,6 +104,9 @@ function initializeApp() {
         hasHero: Boolean(acfSettings.hero_video),
         hasLogo: Boolean(acfSettings.site_logo_custom),
       });
+
+      // Textes du site (champs ACF « Textes — … ») : voir i18n/siteTexts.js
+      updateSiteTexts(acfSettings.texts);
     })
     .catch(() => {
       store.dispatch(setSiteSettings({}));

@@ -1,0 +1,584 @@
+{
+    "key": "group_seo_texts",
+    "title": "Textes — Référencement (SEO)",
+    "fields": [
+        {
+            "key": "field_seo_tab_fr",
+            "label": "Français",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__seo__cart__fr",
+            "label": "seo › cart",
+            "name": "txt__seo__cart__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.cart. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__catalog__fr",
+            "label": "seo › catalog",
+            "name": "txt__seo__catalog__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.catalog. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__catalogdescription__fr",
+            "label": "seo › catalogDescription",
+            "name": "txt__seo__catalogDescription__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.catalogDescription. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__checkout__fr",
+            "label": "seo › checkout",
+            "name": "txt__seo__checkout__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.checkout. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__contact__fr",
+            "label": "seo › contact",
+            "name": "txt__seo__contact__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.contact. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__contactdescription__fr",
+            "label": "seo › contactDescription",
+            "name": "txt__seo__contactDescription__fr",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Clé du dictionnaire : seo.contactDescription. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_txt__seo__home__fr",
+            "label": "seo › home",
+            "name": "txt__seo__home__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.home. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__homedescription__fr",
+            "label": "seo › homeDescription",
+            "name": "txt__seo__homeDescription__fr",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Clé du dictionnaire : seo.homeDescription. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_txt__seo__newpassword__fr",
+            "label": "seo › newPassword",
+            "name": "txt__seo__newPassword__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.newPassword. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__notfound__fr",
+            "label": "seo › notFound",
+            "name": "txt__seo__notFound__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.notFound. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__profile__fr",
+            "label": "seo › profile",
+            "name": "txt__seo__profile__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.profile. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__success__fr",
+            "label": "seo › success",
+            "name": "txt__seo__success__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.success. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__wishlist__fr",
+            "label": "seo › wishlist",
+            "name": "txt__seo__wishlist__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.wishlist. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_seo_tab_en",
+            "label": "English",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__seo__cart__en",
+            "label": "seo › cart",
+            "name": "txt__seo__cart__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.cart. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__catalog__en",
+            "label": "seo › catalog",
+            "name": "txt__seo__catalog__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.catalog. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__catalogdescription__en",
+            "label": "seo › catalogDescription",
+            "name": "txt__seo__catalogDescription__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.catalogDescription. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__checkout__en",
+            "label": "seo › checkout",
+            "name": "txt__seo__checkout__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.checkout. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__contact__en",
+            "label": "seo › contact",
+            "name": "txt__seo__contact__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.contact. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__contactdescription__en",
+            "label": "seo › contactDescription",
+            "name": "txt__seo__contactDescription__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.contactDescription. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__home__en",
+            "label": "seo › home",
+            "name": "txt__seo__home__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.home. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__homedescription__en",
+            "label": "seo › homeDescription",
+            "name": "txt__seo__homeDescription__en",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Clé du dictionnaire : seo.homeDescription. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_txt__seo__newpassword__en",
+            "label": "seo › newPassword",
+            "name": "txt__seo__newPassword__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.newPassword. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__notfound__en",
+            "label": "seo › notFound",
+            "name": "txt__seo__notFound__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.notFound. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__profile__en",
+            "label": "seo › profile",
+            "name": "txt__seo__profile__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.profile. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__success__en",
+            "label": "seo › success",
+            "name": "txt__seo__success__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.success. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__seo__wishlist__en",
+            "label": "seo › wishlist",
+            "name": "txt__seo__wishlist__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : seo.wishlist. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ]
+    ],
+    "menu_order": 19,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793890298
+}

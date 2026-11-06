@@ -1,0 +1,384 @@
+{
+    "key": "group_authprompt_texts",
+    "title": "Textes — Invitation à se connecter avant le paiement",
+    "fields": [
+        {
+            "key": "field_authprompt_tab_fr",
+            "label": "Français",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__authprompt__benefits__addresses__fr",
+            "label": "authPrompt › benefits › addresses",
+            "name": "txt__authPrompt__benefits__addresses__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.benefits.addresses. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__benefits__orders__fr",
+            "label": "authPrompt › benefits › orders",
+            "name": "txt__authPrompt__benefits__orders__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.benefits.orders. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__guest__fr",
+            "label": "authPrompt › guest",
+            "name": "txt__authPrompt__guest__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.guest. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__guestwarning__fr",
+            "label": "authPrompt › guestWarning",
+            "name": "txt__authPrompt__guestWarning__fr",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Clé du dictionnaire : authPrompt.guestWarning. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_txt__authprompt__intro__fr",
+            "label": "authPrompt › intro",
+            "name": "txt__authPrompt__intro__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.intro. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__register__fr",
+            "label": "authPrompt › register",
+            "name": "txt__authPrompt__register__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.register. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__signin__fr",
+            "label": "authPrompt › signIn",
+            "name": "txt__authPrompt__signIn__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.signIn. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__title__fr",
+            "label": "authPrompt › title",
+            "name": "txt__authPrompt__title__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.title. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_authprompt_tab_en",
+            "label": "English",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__authprompt__benefits__addresses__en",
+            "label": "authPrompt › benefits › addresses",
+            "name": "txt__authPrompt__benefits__addresses__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.benefits.addresses. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__benefits__orders__en",
+            "label": "authPrompt › benefits › orders",
+            "name": "txt__authPrompt__benefits__orders__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.benefits.orders. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__guest__en",
+            "label": "authPrompt › guest",
+            "name": "txt__authPrompt__guest__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.guest. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__guestwarning__en",
+            "label": "authPrompt › guestWarning",
+            "name": "txt__authPrompt__guestWarning__en",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Clé du dictionnaire : authPrompt.guestWarning. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_txt__authprompt__intro__en",
+            "label": "authPrompt › intro",
+            "name": "txt__authPrompt__intro__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.intro. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__register__en",
+            "label": "authPrompt › register",
+            "name": "txt__authPrompt__register__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.register. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__signin__en",
+            "label": "authPrompt › signIn",
+            "name": "txt__authPrompt__signIn__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.signIn. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__authprompt__title__en",
+            "label": "authPrompt › title",
+            "name": "txt__authPrompt__title__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : authPrompt.title. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ]
+    ],
+    "menu_order": 17,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793890297
+}

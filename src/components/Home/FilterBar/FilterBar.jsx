@@ -53,7 +53,9 @@ export default function FilterBar({ onFilterChange, hasProducts }) {
     // libellés calculés au premier rendu et les filtres restent en français
     // après un changement de langue. `products` ne bouge pas quand on bascule,
     // la valeur mémoïsée n'était donc jamais réévaluée.
-  }, [products, i18n.resolvedLanguage]);
+    // `t` change aussi quand les textes du site sont mis à jour depuis l'admin
+    // (src/i18n/siteTexts.js) : la langue, elle, reste la même.
+  }, [products, i18n.resolvedLanguage, t]);
 
   const handleFilterClick = (filterId) => {
     setActiveFilter(filterId);

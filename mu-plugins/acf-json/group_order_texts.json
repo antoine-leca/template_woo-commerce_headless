@@ -1,0 +1,504 @@
+{
+    "key": "group_order_texts",
+    "title": "Textes — Confirmation de commande",
+    "fields": [
+        {
+            "key": "field_order_tab_fr",
+            "label": "Français",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__order__confirmed__fr",
+            "label": "order › confirmed",
+            "name": "txt__order__confirmed__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.confirmed. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__emaillabel__fr",
+            "label": "order › next › emailLabel",
+            "name": "txt__order__next__emailLabel__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.emailLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__emailtext__fr",
+            "label": "order › next › emailText",
+            "name": "txt__order__next__emailText__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.emailText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__helplabel__fr",
+            "label": "order › next › helpLabel",
+            "name": "txt__order__next__helpLabel__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.helpLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__helplink__fr",
+            "label": "order › next › helpLink",
+            "name": "txt__order__next__helpLink__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.helpLink. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__helptext__fr",
+            "label": "order › next › helpText",
+            "name": "txt__order__next__helpText__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.helpText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__orderslabel__fr",
+            "label": "order › next › ordersLabel",
+            "name": "txt__order__next__ordersLabel__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.ordersLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__orderstext__fr",
+            "label": "order › next › ordersText",
+            "name": "txt__order__next__ordersText__fr",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Clé du dictionnaire : order.next.ordersText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_txt__order__next__receiptlabel__fr",
+            "label": "order › next › receiptLabel",
+            "name": "txt__order__next__receiptLabel__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.receiptLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__receipttext__fr",
+            "label": "order › next › receiptText",
+            "name": "txt__order__next__receiptText__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.receiptText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__thanks__fr",
+            "label": "order › thanks",
+            "name": "txt__order__thanks__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.thanks. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_order_tab_en",
+            "label": "English",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__order__confirmed__en",
+            "label": "order › confirmed",
+            "name": "txt__order__confirmed__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.confirmed. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__emaillabel__en",
+            "label": "order › next › emailLabel",
+            "name": "txt__order__next__emailLabel__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.emailLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__emailtext__en",
+            "label": "order › next › emailText",
+            "name": "txt__order__next__emailText__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.emailText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__helplabel__en",
+            "label": "order › next › helpLabel",
+            "name": "txt__order__next__helpLabel__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.helpLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__helplink__en",
+            "label": "order › next › helpLink",
+            "name": "txt__order__next__helpLink__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.helpLink. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__helptext__en",
+            "label": "order › next › helpText",
+            "name": "txt__order__next__helpText__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.helpText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__orderslabel__en",
+            "label": "order › next › ordersLabel",
+            "name": "txt__order__next__ordersLabel__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.ordersLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__orderstext__en",
+            "label": "order › next › ordersText",
+            "name": "txt__order__next__ordersText__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.ordersText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__receiptlabel__en",
+            "label": "order › next › receiptLabel",
+            "name": "txt__order__next__receiptLabel__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.receiptLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__next__receipttext__en",
+            "label": "order › next › receiptText",
+            "name": "txt__order__next__receiptText__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.next.receiptText. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__order__thanks__en",
+            "label": "order › thanks",
+            "name": "txt__order__thanks__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : order.thanks. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ]
+    ],
+    "menu_order": 18,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793890297
+}

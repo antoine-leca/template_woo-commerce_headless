@@ -1,0 +1,704 @@
+{
+    "key": "group_catalog_texts",
+    "title": "Textes — Catalogue",
+    "fields": [
+        {
+            "key": "field_catalog_tab_fr",
+            "label": "Français",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__catalog__all__fr",
+            "label": "catalog › all",
+            "name": "txt__catalog__all__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.all. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__allcategories__fr",
+            "label": "catalog › allCategories",
+            "name": "txt__catalog__allCategories__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.allCategories. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__categories__femme__fr",
+            "label": "catalog › categories › femme",
+            "name": "txt__catalog__categories__femme__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.categories.femme. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__categories__homme__fr",
+            "label": "catalog › categories › homme",
+            "name": "txt__catalog__categories__homme__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.categories.homme. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__categories__tous__fr",
+            "label": "catalog › categories › tous",
+            "name": "txt__catalog__categories__tous__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.categories.tous. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__filterlabel__fr",
+            "label": "catalog › filterLabel",
+            "name": "txt__catalog__filterLabel__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.filterLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__nameasc__fr",
+            "label": "catalog › nameAsc",
+            "name": "txt__catalog__nameAsc__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.nameAsc. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__newest__fr",
+            "label": "catalog › newest",
+            "name": "txt__catalog__newest__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.newest. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__nomatch__fr",
+            "label": "catalog › noMatch",
+            "name": "txt__catalog__noMatch__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.noMatch. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__noproduct__fr",
+            "label": "catalog › noProduct",
+            "name": "txt__catalog__noProduct__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.noProduct. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__priceasc__fr",
+            "label": "catalog › priceAsc",
+            "name": "txt__catalog__priceAsc__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceAsc. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__pricedesc__fr",
+            "label": "catalog › priceDesc",
+            "name": "txt__catalog__priceDesc__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceDesc. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__pricemax__fr",
+            "label": "catalog › priceMax",
+            "name": "txt__catalog__priceMax__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceMax. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__pricemin__fr",
+            "label": "catalog › priceMin",
+            "name": "txt__catalog__priceMin__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceMin. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__searchproduct__fr",
+            "label": "catalog › searchProduct",
+            "name": "txt__catalog__searchProduct__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.searchProduct. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__showless__fr",
+            "label": "catalog › showLess",
+            "name": "txt__catalog__showLess__fr",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.showLess. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_catalog_tab_en",
+            "label": "English",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_txt__catalog__all__en",
+            "label": "catalog › all",
+            "name": "txt__catalog__all__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.all. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__allcategories__en",
+            "label": "catalog › allCategories",
+            "name": "txt__catalog__allCategories__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.allCategories. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__categories__femme__en",
+            "label": "catalog › categories › femme",
+            "name": "txt__catalog__categories__femme__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.categories.femme. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__categories__homme__en",
+            "label": "catalog › categories › homme",
+            "name": "txt__catalog__categories__homme__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.categories.homme. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__categories__tous__en",
+            "label": "catalog › categories › tous",
+            "name": "txt__catalog__categories__tous__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.categories.tous. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__filterlabel__en",
+            "label": "catalog › filterLabel",
+            "name": "txt__catalog__filterLabel__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.filterLabel. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__nameasc__en",
+            "label": "catalog › nameAsc",
+            "name": "txt__catalog__nameAsc__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.nameAsc. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__newest__en",
+            "label": "catalog › newest",
+            "name": "txt__catalog__newest__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.newest. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__nomatch__en",
+            "label": "catalog › noMatch",
+            "name": "txt__catalog__noMatch__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.noMatch. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__noproduct__en",
+            "label": "catalog › noProduct",
+            "name": "txt__catalog__noProduct__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.noProduct. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__priceasc__en",
+            "label": "catalog › priceAsc",
+            "name": "txt__catalog__priceAsc__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceAsc. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__pricedesc__en",
+            "label": "catalog › priceDesc",
+            "name": "txt__catalog__priceDesc__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceDesc. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__pricemax__en",
+            "label": "catalog › priceMax",
+            "name": "txt__catalog__priceMax__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceMax. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__pricemin__en",
+            "label": "catalog › priceMin",
+            "name": "txt__catalog__priceMin__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.priceMin. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__searchproduct__en",
+            "label": "catalog › searchProduct",
+            "name": "txt__catalog__searchProduct__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.searchProduct. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_txt__catalog__showless__en",
+            "label": "catalog › showLess",
+            "name": "txt__catalog__showLess__en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Clé du dictionnaire : catalog.showLess. Vide = texte d'origine du site.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "54"
+            }
+        ]
+    ],
+    "menu_order": 11,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793890296
+}
