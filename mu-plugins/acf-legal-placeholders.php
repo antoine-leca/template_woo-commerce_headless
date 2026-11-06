@@ -178,6 +178,9 @@ add_filter('rest_prepare_page', function ($response) {
     if (isset($response->data['content']['rendered'])) {
         $response->data['content']['rendered'] = headless_fill_legal_placeholders($response->data['content']['rendered']);
     }
+    if (isset($response->data['excerpt']['rendered'])) {
+        $response->data['excerpt']['rendered'] = headless_fill_legal_placeholders($response->data['excerpt']['rendered']);
+    }
 
     return $response;
 }, 20);

@@ -107,6 +107,15 @@ nom ci-dessus (`txt__<clé avec __ à la place des points>__fr` et `__en`) ; rie
 d'autre à faire, l'API l'expose (`mu-plugins/acf-site-texts.php`) et le front le
 superpose.
 
+### Pages entières (FAQ, CGV, mentions, confidentialité, cookies, à propos, contact)
+
+Ces pages (en français et en anglais) se modifient **intégralement dans les champs ACF** de la page, dans Pages > la page concernée : l’éditeur WordPress y est retiré. Chaque page porte des sections numérotées (titre, niveau, texte complet avec mise en forme) ; les emplacements vides en bas permettent d’en ajouter. ACF gratuit n’a pas de répéteur, d’où les emplacements numérotés.
+
+- Code : `mu-plugins/acf-page-sections.php` (liste des identifiants de pages dans `HEADLESS_SECTION_PAGE_IDS`) et `mu-plugins/acf-json/group_page_<ID>.json`.
+- L’API `/wp/v2/pages` renvoie ces sections à la place du contenu de l’éditeur (titres h2/h3 pour l’accordéon, extrait SEO recalculé). Si aucune section n’est remplie, l’éditeur reste servi.
+- Les marqueurs `[...]` du texte sont toujours remplacés par les « Informations légales » de « Paramètres du site ».
+- Pas de page WordPress pour les CGU : cette page du front n’est pas modifiable (slug `conditions-generales-dutilisation-cgu` à créer si besoin).
+
 ### Informations légales (les `[...]` des pages légales)
 
 Les mentions légales, les CGV, la politique de confidentialité et la politique des

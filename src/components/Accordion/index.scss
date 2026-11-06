@@ -126,3 +126,11 @@
     transition: none;
   }
 }
+
+/* Question d'une FAQ à l'intérieur d'un panneau : elle se distingue de sa
+   réponse sans rivaliser avec le titre de la rubrique. */
+.page-content .accordion__body h4 {
+  margin: 1.6em 0 0.4em;
+  font-size: 1em;
+  font-weight: 600;
+}

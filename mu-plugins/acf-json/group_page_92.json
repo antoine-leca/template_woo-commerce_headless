@@ -1,0 +1,794 @@
+{
+    "key": "group_page_92",
+    "title": "Contenu de la page — Cookie Policy",
+    "fields": [
+        {
+            "key": "field_pg92_info",
+            "label": "Contenu de la page",
+            "name": "",
+            "type": "message",
+            "message": "<p><strong>Toute la page se modifie ici</strong>, section par section : le titre, puis le texte complet (paragraphes, listes, liens). L’affichage sur le site reprend l’ordre des sections ci-dessous.</p><p>Pour ajouter une section, remplissez un emplacement vide en bas ; pour en retirer une, videz son titre et son texte. Le niveau « Titre principal » est celui des rubriques, « Sous-titre » celui des questions ou articles repliables.</p><p>Les marqueurs <code>[…]</code> sont remplacés par les « Informations légales » enregistrées sur la page « Paramètres du site ».</p>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_pg92_s01_title",
+            "label": "Section 01 — Titre",
+            "name": "sec_01_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s01_level",
+            "label": "Niveau",
+            "name": "sec_01_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s01_body",
+            "label": "Section 01 — Texte",
+            "name": "sec_01_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s02_title",
+            "label": "Section 02 — Titre",
+            "name": "sec_02_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s02_level",
+            "label": "Niveau",
+            "name": "sec_02_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s02_body",
+            "label": "Section 02 — Texte",
+            "name": "sec_02_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s03_title",
+            "label": "Section 03 — Titre",
+            "name": "sec_03_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s03_level",
+            "label": "Niveau",
+            "name": "sec_03_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s03_body",
+            "label": "Section 03 — Texte",
+            "name": "sec_03_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s04_title",
+            "label": "Section 04 — Titre",
+            "name": "sec_04_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s04_level",
+            "label": "Niveau",
+            "name": "sec_04_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s04_body",
+            "label": "Section 04 — Texte",
+            "name": "sec_04_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s05_title",
+            "label": "Section 05 — Titre",
+            "name": "sec_05_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s05_level",
+            "label": "Niveau",
+            "name": "sec_05_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s05_body",
+            "label": "Section 05 — Texte",
+            "name": "sec_05_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s06_title",
+            "label": "Section 06 — Titre",
+            "name": "sec_06_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s06_level",
+            "label": "Niveau",
+            "name": "sec_06_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s06_body",
+            "label": "Section 06 — Texte",
+            "name": "sec_06_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s07_title",
+            "label": "Section 07 — Titre",
+            "name": "sec_07_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s07_level",
+            "label": "Niveau",
+            "name": "sec_07_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s07_body",
+            "label": "Section 07 — Texte",
+            "name": "sec_07_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s08_title",
+            "label": "Section 08 — Titre",
+            "name": "sec_08_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s08_level",
+            "label": "Niveau",
+            "name": "sec_08_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s08_body",
+            "label": "Section 08 — Texte",
+            "name": "sec_08_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s09_title",
+            "label": "Section 09 — Titre",
+            "name": "sec_09_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s09_level",
+            "label": "Niveau",
+            "name": "sec_09_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s09_body",
+            "label": "Section 09 — Texte",
+            "name": "sec_09_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s10_title",
+            "label": "Section 10 — Titre",
+            "name": "sec_10_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s10_level",
+            "label": "Niveau",
+            "name": "sec_10_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s10_body",
+            "label": "Section 10 — Texte",
+            "name": "sec_10_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s11_title",
+            "label": "Section 11 — Titre",
+            "name": "sec_11_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s11_level",
+            "label": "Niveau",
+            "name": "sec_11_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s11_body",
+            "label": "Section 11 — Texte",
+            "name": "sec_11_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s12_title",
+            "label": "Section 12 — Titre",
+            "name": "sec_12_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s12_level",
+            "label": "Niveau",
+            "name": "sec_12_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s12_body",
+            "label": "Section 12 — Texte",
+            "name": "sec_12_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s13_title",
+            "label": "Section 13 — Titre",
+            "name": "sec_13_title",
+            "type": "text",
+            "instructions": "",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s13_level",
+            "label": "Niveau",
+            "name": "sec_13_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s13_body",
+            "label": "Section 13 — Texte",
+            "name": "sec_13_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s14_title",
+            "label": "Section 14 — Titre",
+            "name": "sec_14_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s14_level",
+            "label": "Niveau",
+            "name": "sec_14_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s14_body",
+            "label": "Section 14 — Texte",
+            "name": "sec_14_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s15_title",
+            "label": "Section 15 — Titre",
+            "name": "sec_15_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s15_level",
+            "label": "Niveau",
+            "name": "sec_15_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s15_body",
+            "label": "Section 15 — Texte",
+            "name": "sec_15_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s16_title",
+            "label": "Section 16 — Titre",
+            "name": "sec_16_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s16_level",
+            "label": "Niveau",
+            "name": "sec_16_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s16_body",
+            "label": "Section 16 — Texte",
+            "name": "sec_16_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s17_title",
+            "label": "Section 17 — Titre",
+            "name": "sec_17_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s17_level",
+            "label": "Niveau",
+            "name": "sec_17_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s17_body",
+            "label": "Section 17 — Texte",
+            "name": "sec_17_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s18_title",
+            "label": "Section 18 — Titre",
+            "name": "sec_18_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s18_level",
+            "label": "Niveau",
+            "name": "sec_18_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s18_body",
+            "label": "Section 18 — Texte",
+            "name": "sec_18_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s19_title",
+            "label": "Section 19 — Titre",
+            "name": "sec_19_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "wrapper": {
+                "width": "70"
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_pg92_s19_level",
+            "label": "Niveau",
+            "name": "sec_19_level",
+            "type": "select",
+            "wrapper": {
+                "width": "30"
+            },
+            "choices": {
+                "h2": "Titre principal",
+                "h3": "Sous-titre"
+            },
+            "default_value": "h3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_pg92_s19_body",
+            "label": "Section 19 — Texte",
+            "name": "sec_19_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "92"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1793954110
+}

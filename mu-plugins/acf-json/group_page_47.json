@@ -1,0 +1,1250 @@
+{
+    "key": "group_page_47",
+    "title": "Contenu de la page — FAQ",
+    "fields": [
+        {
+            "key": "field_pg47_info",
+            "label": "Contenu de la FAQ",
+            "name": "",
+            "type": "message",
+            "new_lines": "wpautop",
+            "esc_html": 0,
+            "message": "<p><strong>Toute la FAQ se modifie ici.</strong> Chaque rubrique (ex. « Livraison ») s’affiche comme un panneau repliable. Dans chaque rubrique, saisissez les questions (sous-titres) et leurs réponses (paragraphes).</p><p>Pour ajouter une rubrique ou une question, remplissez un emplacement vide ; pour en retirer une, videz son titre / sa question et sa réponse.</p>"
+        },
+        {
+            "key": "field_pg47_faq01_title",
+            "label": "Rubrique 01 — Titre",
+            "name": "faq_01_title",
+            "type": "text",
+            "instructions": "",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0101_q",
+            "label": "Rubrique 01 — Question 1 (sous-titre)",
+            "name": "faq_01_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0101_a",
+            "label": "Rubrique 01 — Réponse 1",
+            "name": "faq_01_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0102_q",
+            "label": "Rubrique 01 — Question 2 (sous-titre)",
+            "name": "faq_01_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0102_a",
+            "label": "Rubrique 01 — Réponse 2",
+            "name": "faq_01_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0103_q",
+            "label": "Rubrique 01 — Question 3 (sous-titre)",
+            "name": "faq_01_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0103_a",
+            "label": "Rubrique 01 — Réponse 3",
+            "name": "faq_01_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0104_q",
+            "label": "Rubrique 01 — Question 4 (sous-titre)",
+            "name": "faq_01_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0104_a",
+            "label": "Rubrique 01 — Réponse 4",
+            "name": "faq_01_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0105_q",
+            "label": "Rubrique 01 — Question 5 (sous-titre)",
+            "name": "faq_01_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0105_a",
+            "label": "Rubrique 01 — Réponse 5",
+            "name": "faq_01_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0106_q",
+            "label": "Rubrique 01 — Question 6 (sous-titre)",
+            "name": "faq_01_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0106_a",
+            "label": "Rubrique 01 — Réponse 6",
+            "name": "faq_01_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0107_q",
+            "label": "Rubrique 01 — Question 7 (sous-titre)",
+            "name": "faq_01_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0107_a",
+            "label": "Rubrique 01 — Réponse 7",
+            "name": "faq_01_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0108_q",
+            "label": "Rubrique 01 — Question 8 (sous-titre)",
+            "name": "faq_01_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0108_a",
+            "label": "Rubrique 01 — Réponse 8",
+            "name": "faq_01_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq02_title",
+            "label": "Rubrique 02 — Titre",
+            "name": "faq_02_title",
+            "type": "text",
+            "instructions": "",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0201_q",
+            "label": "Rubrique 02 — Question 1 (sous-titre)",
+            "name": "faq_02_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0201_a",
+            "label": "Rubrique 02 — Réponse 1",
+            "name": "faq_02_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0202_q",
+            "label": "Rubrique 02 — Question 2 (sous-titre)",
+            "name": "faq_02_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0202_a",
+            "label": "Rubrique 02 — Réponse 2",
+            "name": "faq_02_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0203_q",
+            "label": "Rubrique 02 — Question 3 (sous-titre)",
+            "name": "faq_02_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0203_a",
+            "label": "Rubrique 02 — Réponse 3",
+            "name": "faq_02_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0204_q",
+            "label": "Rubrique 02 — Question 4 (sous-titre)",
+            "name": "faq_02_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0204_a",
+            "label": "Rubrique 02 — Réponse 4",
+            "name": "faq_02_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0205_q",
+            "label": "Rubrique 02 — Question 5 (sous-titre)",
+            "name": "faq_02_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0205_a",
+            "label": "Rubrique 02 — Réponse 5",
+            "name": "faq_02_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0206_q",
+            "label": "Rubrique 02 — Question 6 (sous-titre)",
+            "name": "faq_02_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0206_a",
+            "label": "Rubrique 02 — Réponse 6",
+            "name": "faq_02_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0207_q",
+            "label": "Rubrique 02 — Question 7 (sous-titre)",
+            "name": "faq_02_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0207_a",
+            "label": "Rubrique 02 — Réponse 7",
+            "name": "faq_02_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0208_q",
+            "label": "Rubrique 02 — Question 8 (sous-titre)",
+            "name": "faq_02_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0208_a",
+            "label": "Rubrique 02 — Réponse 8",
+            "name": "faq_02_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq03_title",
+            "label": "Rubrique 03 — Titre",
+            "name": "faq_03_title",
+            "type": "text",
+            "instructions": "",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0301_q",
+            "label": "Rubrique 03 — Question 1 (sous-titre)",
+            "name": "faq_03_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0301_a",
+            "label": "Rubrique 03 — Réponse 1",
+            "name": "faq_03_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0302_q",
+            "label": "Rubrique 03 — Question 2 (sous-titre)",
+            "name": "faq_03_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0302_a",
+            "label": "Rubrique 03 — Réponse 2",
+            "name": "faq_03_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0303_q",
+            "label": "Rubrique 03 — Question 3 (sous-titre)",
+            "name": "faq_03_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0303_a",
+            "label": "Rubrique 03 — Réponse 3",
+            "name": "faq_03_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0304_q",
+            "label": "Rubrique 03 — Question 4 (sous-titre)",
+            "name": "faq_03_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0304_a",
+            "label": "Rubrique 03 — Réponse 4",
+            "name": "faq_03_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0305_q",
+            "label": "Rubrique 03 — Question 5 (sous-titre)",
+            "name": "faq_03_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0305_a",
+            "label": "Rubrique 03 — Réponse 5",
+            "name": "faq_03_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0306_q",
+            "label": "Rubrique 03 — Question 6 (sous-titre)",
+            "name": "faq_03_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0306_a",
+            "label": "Rubrique 03 — Réponse 6",
+            "name": "faq_03_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0307_q",
+            "label": "Rubrique 03 — Question 7 (sous-titre)",
+            "name": "faq_03_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0307_a",
+            "label": "Rubrique 03 — Réponse 7",
+            "name": "faq_03_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0308_q",
+            "label": "Rubrique 03 — Question 8 (sous-titre)",
+            "name": "faq_03_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0308_a",
+            "label": "Rubrique 03 — Réponse 8",
+            "name": "faq_03_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq04_title",
+            "label": "Rubrique 04 — Titre",
+            "name": "faq_04_title",
+            "type": "text",
+            "instructions": "",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0401_q",
+            "label": "Rubrique 04 — Question 1 (sous-titre)",
+            "name": "faq_04_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0401_a",
+            "label": "Rubrique 04 — Réponse 1",
+            "name": "faq_04_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0402_q",
+            "label": "Rubrique 04 — Question 2 (sous-titre)",
+            "name": "faq_04_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0402_a",
+            "label": "Rubrique 04 — Réponse 2",
+            "name": "faq_04_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0403_q",
+            "label": "Rubrique 04 — Question 3 (sous-titre)",
+            "name": "faq_04_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0403_a",
+            "label": "Rubrique 04 — Réponse 3",
+            "name": "faq_04_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0404_q",
+            "label": "Rubrique 04 — Question 4 (sous-titre)",
+            "name": "faq_04_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0404_a",
+            "label": "Rubrique 04 — Réponse 4",
+            "name": "faq_04_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0405_q",
+            "label": "Rubrique 04 — Question 5 (sous-titre)",
+            "name": "faq_04_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0405_a",
+            "label": "Rubrique 04 — Réponse 5",
+            "name": "faq_04_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0406_q",
+            "label": "Rubrique 04 — Question 6 (sous-titre)",
+            "name": "faq_04_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0406_a",
+            "label": "Rubrique 04 — Réponse 6",
+            "name": "faq_04_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0407_q",
+            "label": "Rubrique 04 — Question 7 (sous-titre)",
+            "name": "faq_04_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0407_a",
+            "label": "Rubrique 04 — Réponse 7",
+            "name": "faq_04_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0408_q",
+            "label": "Rubrique 04 — Question 8 (sous-titre)",
+            "name": "faq_04_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0408_a",
+            "label": "Rubrique 04 — Réponse 8",
+            "name": "faq_04_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq05_title",
+            "label": "Rubrique 05 — Titre",
+            "name": "faq_05_title",
+            "type": "text",
+            "instructions": "",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0501_q",
+            "label": "Rubrique 05 — Question 1 (sous-titre)",
+            "name": "faq_05_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0501_a",
+            "label": "Rubrique 05 — Réponse 1",
+            "name": "faq_05_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0502_q",
+            "label": "Rubrique 05 — Question 2 (sous-titre)",
+            "name": "faq_05_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0502_a",
+            "label": "Rubrique 05 — Réponse 2",
+            "name": "faq_05_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0503_q",
+            "label": "Rubrique 05 — Question 3 (sous-titre)",
+            "name": "faq_05_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0503_a",
+            "label": "Rubrique 05 — Réponse 3",
+            "name": "faq_05_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0504_q",
+            "label": "Rubrique 05 — Question 4 (sous-titre)",
+            "name": "faq_05_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0504_a",
+            "label": "Rubrique 05 — Réponse 4",
+            "name": "faq_05_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0505_q",
+            "label": "Rubrique 05 — Question 5 (sous-titre)",
+            "name": "faq_05_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0505_a",
+            "label": "Rubrique 05 — Réponse 5",
+            "name": "faq_05_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0506_q",
+            "label": "Rubrique 05 — Question 6 (sous-titre)",
+            "name": "faq_05_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0506_a",
+            "label": "Rubrique 05 — Réponse 6",
+            "name": "faq_05_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0507_q",
+            "label": "Rubrique 05 — Question 7 (sous-titre)",
+            "name": "faq_05_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0507_a",
+            "label": "Rubrique 05 — Réponse 7",
+            "name": "faq_05_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0508_q",
+            "label": "Rubrique 05 — Question 8 (sous-titre)",
+            "name": "faq_05_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0508_a",
+            "label": "Rubrique 05 — Réponse 8",
+            "name": "faq_05_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq06_title",
+            "label": "Rubrique 06 — Titre",
+            "name": "faq_06_title",
+            "type": "text",
+            "instructions": "",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0601_q",
+            "label": "Rubrique 06 — Question 1 (sous-titre)",
+            "name": "faq_06_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0601_a",
+            "label": "Rubrique 06 — Réponse 1",
+            "name": "faq_06_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0602_q",
+            "label": "Rubrique 06 — Question 2 (sous-titre)",
+            "name": "faq_06_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0602_a",
+            "label": "Rubrique 06 — Réponse 2",
+            "name": "faq_06_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0603_q",
+            "label": "Rubrique 06 — Question 3 (sous-titre)",
+            "name": "faq_06_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0603_a",
+            "label": "Rubrique 06 — Réponse 3",
+            "name": "faq_06_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0604_q",
+            "label": "Rubrique 06 — Question 4 (sous-titre)",
+            "name": "faq_06_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0604_a",
+            "label": "Rubrique 06 — Réponse 4",
+            "name": "faq_06_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0605_q",
+            "label": "Rubrique 06 — Question 5 (sous-titre)",
+            "name": "faq_06_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0605_a",
+            "label": "Rubrique 06 — Réponse 5",
+            "name": "faq_06_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0606_q",
+            "label": "Rubrique 06 — Question 6 (sous-titre)",
+            "name": "faq_06_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0606_a",
+            "label": "Rubrique 06 — Réponse 6",
+            "name": "faq_06_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0607_q",
+            "label": "Rubrique 06 — Question 7 (sous-titre)",
+            "name": "faq_06_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0607_a",
+            "label": "Rubrique 06 — Réponse 7",
+            "name": "faq_06_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0608_q",
+            "label": "Rubrique 06 — Question 8 (sous-titre)",
+            "name": "faq_06_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0608_a",
+            "label": "Rubrique 06 — Réponse 8",
+            "name": "faq_06_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq07_title",
+            "label": "Rubrique 07 — Titre",
+            "name": "faq_07_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0701_q",
+            "label": "Rubrique 07 — Question 1 (sous-titre)",
+            "name": "faq_07_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0701_a",
+            "label": "Rubrique 07 — Réponse 1",
+            "name": "faq_07_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0702_q",
+            "label": "Rubrique 07 — Question 2 (sous-titre)",
+            "name": "faq_07_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0702_a",
+            "label": "Rubrique 07 — Réponse 2",
+            "name": "faq_07_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0703_q",
+            "label": "Rubrique 07 — Question 3 (sous-titre)",
+            "name": "faq_07_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0703_a",
+            "label": "Rubrique 07 — Réponse 3",
+            "name": "faq_07_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0704_q",
+            "label": "Rubrique 07 — Question 4 (sous-titre)",
+            "name": "faq_07_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0704_a",
+            "label": "Rubrique 07 — Réponse 4",
+            "name": "faq_07_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0705_q",
+            "label": "Rubrique 07 — Question 5 (sous-titre)",
+            "name": "faq_07_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0705_a",
+            "label": "Rubrique 07 — Réponse 5",
+            "name": "faq_07_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0706_q",
+            "label": "Rubrique 07 — Question 6 (sous-titre)",
+            "name": "faq_07_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0706_a",
+            "label": "Rubrique 07 — Réponse 6",
+            "name": "faq_07_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0707_q",
+            "label": "Rubrique 07 — Question 7 (sous-titre)",
+            "name": "faq_07_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0707_a",
+            "label": "Rubrique 07 — Réponse 7",
+            "name": "faq_07_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0708_q",
+            "label": "Rubrique 07 — Question 8 (sous-titre)",
+            "name": "faq_07_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0708_a",
+            "label": "Rubrique 07 — Réponse 8",
+            "name": "faq_07_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq08_title",
+            "label": "Rubrique 08 — Titre",
+            "name": "faq_08_title",
+            "type": "text",
+            "instructions": "Emplacement libre : laissez vide pour ne rien afficher.",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0801_q",
+            "label": "Rubrique 08 — Question 1 (sous-titre)",
+            "name": "faq_08_01_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0801_a",
+            "label": "Rubrique 08 — Réponse 1",
+            "name": "faq_08_01_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0802_q",
+            "label": "Rubrique 08 — Question 2 (sous-titre)",
+            "name": "faq_08_02_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0802_a",
+            "label": "Rubrique 08 — Réponse 2",
+            "name": "faq_08_02_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0803_q",
+            "label": "Rubrique 08 — Question 3 (sous-titre)",
+            "name": "faq_08_03_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0803_a",
+            "label": "Rubrique 08 — Réponse 3",
+            "name": "faq_08_03_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0804_q",
+            "label": "Rubrique 08 — Question 4 (sous-titre)",
+            "name": "faq_08_04_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0804_a",
+            "label": "Rubrique 08 — Réponse 4",
+            "name": "faq_08_04_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0805_q",
+            "label": "Rubrique 08 — Question 5 (sous-titre)",
+            "name": "faq_08_05_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0805_a",
+            "label": "Rubrique 08 — Réponse 5",
+            "name": "faq_08_05_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0806_q",
+            "label": "Rubrique 08 — Question 6 (sous-titre)",
+            "name": "faq_08_06_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0806_a",
+            "label": "Rubrique 08 — Réponse 6",
+            "name": "faq_08_06_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0807_q",
+            "label": "Rubrique 08 — Question 7 (sous-titre)",
+            "name": "faq_08_07_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0807_a",
+            "label": "Rubrique 08 — Réponse 7",
+            "name": "faq_08_07_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0808_q",
+            "label": "Rubrique 08 — Question 8 (sous-titre)",
+            "name": "faq_08_08_q",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_pg47_faq0808_a",
+            "label": "Rubrique 08 — Réponse 8",
+            "name": "faq_08_08_a",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "47"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1793959855
+}
