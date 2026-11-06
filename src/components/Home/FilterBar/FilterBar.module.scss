@@ -1,10 +1,28 @@
 @import "../../../styles/variables.scss";
 
+/* Une rangée qui peut passer à la ligne : fermée, la loupe est à gauche des
+   filtres, sur la même ligne ; ouverte, la barre sort de la loupe vers la
+   droite et le saut de ligne (.break) envoie les filtres juste en dessous. */
 .container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  /* Les lignes restent collées en haut pendant que la hauteur s'anime : sinon
+     le flex les répartirait dans la hauteur intermédiaire et elles flotteraient. */
+  align-content: flex-start;
+  justify-content: center;
   align-items: center;
+  row-gap: $spacing-md;
   margin-bottom: $spacing-3xl;
+}
+
+.break {
+  display: none;
+  flex-basis: 100%;
+  height: 0;
+}
+
+.breakOpen {
+  display: block;
 }
 
 .searchButton {
@@ -15,7 +33,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: $spacing-md;
+  flex-shrink: 0;
+  margin-right: $spacing-md;
 
   &:hover {
     opacity: 0.7;
@@ -28,10 +47,84 @@
   transition: opacity $transition-fast;
 }
 
+/* Loupe et croix superposées dans une boîte de la taille de l'icône. */
+.toggleIcon {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+.iconSearch,
+.iconClose {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.iconSearch {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.iconClose {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+.isOpen .iconSearch {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+
+.isOpen .iconClose {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconSearch,
+  .iconClose {
+    transition: opacity 0.01s;
+  }
+}
+
+/* Dépli de la barre vers la droite : la largeur passe de 0 à la place restante
+   (au plus 500 px, moins la loupe et son espace), avec un fondu. */
+.searchCollapse {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+}
+
+.searchCollapseOpen {
+  width: min(500px, calc(100% - 28px - #{$spacing-md}));
+  opacity: 1;
+}
+
+.searchCollapseInner {
+  box-sizing: border-box;
+  min-width: 0;
+  /* Laisse la place au contour du champ, que le masque du dépli rognerait. */
+  padding: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .searchCollapse {
+    transition: none;
+  }
+}
+
 .searchInputWrapper {
   width: 100%;
-  max-width: 500px;
-  margin-bottom: $spacing-md;
   position: relative;
   display: flex;
   align-items: center;
