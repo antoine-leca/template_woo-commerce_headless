@@ -94,31 +94,40 @@
   }
 }
 
-/* Dépli de la barre vers la droite : la largeur passe de 0 à la place restante
-   (au plus 500 px, moins la loupe et son espace), avec un fondu. */
+/* La barre occupe sa place définitive dès l'ouverture (.searchCollapseLayout :
+   la loupe et les filtres s'écartent alors en glissant, voir le FLIP du
+   composant). Elle n'est pas étirée depuis son centre : elle est dévoilée de la
+   gauche vers la droite par un masque (clip-path), avec un fondu. */
 .searchCollapse {
   width: 0;
-  opacity: 0;
+  height: 0;
   overflow: hidden;
-  transition:
-    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.35s ease;
 }
 
-.searchCollapseOpen {
+.searchCollapseLayout {
   width: min(500px, calc(100% - 28px - #{$spacing-md}));
-  opacity: 1;
+  height: auto;
 }
 
 .searchCollapseInner {
   box-sizing: border-box;
   min-width: 0;
-  /* Laisse la place au contour du champ, que le masque du dépli rognerait. */
+  /* Laisse la place au contour du champ, que le masque rognerait. */
   padding: 4px;
+  opacity: 0;
+  /* Fermeture : fondu court. */
+  transition: opacity 0.3s ease;
+}
+
+.searchCollapseOpen .searchCollapseInner {
+  opacity: 1;
+  /* Ouverture : fondu plus long et légèrement différé, pour qu'il se voie
+     pendant que la loupe et les filtres glissent à leur place. */
+  transition: opacity 0.5s ease 0.12s;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .searchCollapse {
+  .searchCollapseInner {
     transition: none;
   }
 }
@@ -140,13 +149,11 @@
 .searchInput {
   width: 100%;
   padding: $spacing-sm $spacing-md $spacing-sm 40px;
-  border: 2px solid $primary-blue;
-  border-radius: 25px;
+  border: none;
   font-size: $font-size-base;
   font-family: $font-family;
   color: $text-primary;
   background: $primary-blue;
-  transition: all $transition-fast;
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.5);
@@ -154,7 +161,6 @@
 
   &:focus {
     outline: none;
-    border-color: $text-primary;
   }
 }
 

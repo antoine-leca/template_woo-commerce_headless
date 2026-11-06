@@ -221,7 +221,7 @@ export default function FilterBar({ onFilterChange, hasProducts }) {
           disparaître d'un coup. Fermée, le champ est désactivé (ni focus, ni
           tabulation) et masqué aux lecteurs d'écran. */}
       <div
-        className={`${styles.searchCollapse} ${searchOpen ? styles.searchCollapseOpen : ""}`}
+        className={`${styles.searchCollapse} ${layoutOpen ? styles.searchCollapseLayout : ""} ${searchOpen ? styles.searchCollapseOpen : ""}`}
         aria-hidden={!searchOpen}
       >
         <div className={styles.searchCollapseInner}>
