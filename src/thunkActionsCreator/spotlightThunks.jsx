@@ -14,7 +14,6 @@ export const fetchSpotlightProductsThunk = createAsyncThunk(
       const url = `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/products?featured=true`;
       const response = await fetch(url, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
       });
       if (!response.ok) {
         throw new Error(apiError("errors.spotlight"));

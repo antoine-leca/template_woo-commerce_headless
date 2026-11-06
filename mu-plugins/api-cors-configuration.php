@@ -74,6 +74,13 @@ add_action('rest_api_init', function() use ($allowed_origins) {
             header('Access-Control-Allow-Origin: ' . $origin);
             header('Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, PATCH, DELETE');
             header('Access-Control-Allow-Credentials: true');
+
+            // Le navigateur garde la réponse du preflight (2 h au plus, plafond
+            // de Chrome) au lieu de redemander l'autorisation avant chaque
+            // requête vers la même adresse.
+            if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') {
+                header('Access-Control-Max-Age: 7200');
+            }
         }
 
         // La réponse dépend de l'origine : les caches doivent le savoir.

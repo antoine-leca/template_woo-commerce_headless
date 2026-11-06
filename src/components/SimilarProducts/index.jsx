@@ -24,7 +24,6 @@ export default function SimilarProducts({
         if (categoryId) {
           const response = await fetch(`${baseUrl}?category=${categoryId}`, {
             method: "GET",
-            headers: { "Content-Type": "application/json" },
           });
 
           if (response.ok) {
@@ -51,7 +50,6 @@ export default function SimilarProducts({
         if (recommendations.length < 3) {
           const fallbackResponse = await fetch(`${baseUrl}?per_page=10`, {
             method: "GET",
-            headers: { "Content-Type": "application/json" },
           });
 
           if (fallbackResponse.ok) {

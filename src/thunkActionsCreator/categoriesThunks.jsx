@@ -8,7 +8,6 @@ export const fetchCategoriesThunk = createAsyncThunk(
       const url = `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/products/categories?_fields=id,name,slug`;
       const response = await fetch(url, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
       });
       if (!response.ok) {
         throw new Error(apiError("errors.categories"));

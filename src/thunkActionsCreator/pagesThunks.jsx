@@ -6,7 +6,6 @@ const fetchPageBySlug = async (slug) => {
     `${import.meta.env.VITE_API_URL}/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}`,
     {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
     },
   );
 

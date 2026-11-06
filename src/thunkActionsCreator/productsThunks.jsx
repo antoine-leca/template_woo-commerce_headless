@@ -46,7 +46,6 @@ export const fetchProductsThunk = createAsyncThunk(
       const url = `${import.meta.env.VITE_API_URL}/wp-json/custom/v1/products?${queryString}`;
       const response = await fetch(url, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
         signal: controller.signal,
       });
       if (!response.ok) {
@@ -80,7 +79,6 @@ export const fetchSearchSuggestionsThunk = createAsyncThunk(
       const url = `${import.meta.env.VITE_API_URL}/wp-json/wc/store/v1/products?${queryString}`;
       const response = await fetch(url, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
       });
       if (!response.ok) {
         throw new Error(apiError("errors.suggestions"));
@@ -101,7 +99,6 @@ export const fetchProductByIdThunk = createAsyncThunk(
 
       const response = await fetch(url, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
       });
 
       if (!response.ok) {
