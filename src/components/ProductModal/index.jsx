@@ -5,6 +5,7 @@ import { addProductToCart } from "../../thunkActionsCreator/cartThunks";
 import { showToast } from "../../slices/toastSlice";
 import "./index.css";
 import ProductGallery from "./ProductGallery";
+import SizeGuide from "../SizeGuide";
 import { formatPrice } from "../../utils/formatPrice";
 import { useTranslation } from "react-i18next";
 import useDialogFocus from "../../hooks/useDialogFocus";
@@ -233,6 +234,9 @@ export default function ProductModal({ product, onClose }) {
                       );
                     })}
                   </select>
+                  {/\btaille\b|\bsize\b|pa_taille|pa_size/i.test(attr.name) && (
+                    <SizeGuide />
+                  )}
                 </div>
               ))}
             </div>

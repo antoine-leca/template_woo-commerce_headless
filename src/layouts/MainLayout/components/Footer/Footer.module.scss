@@ -46,6 +46,29 @@
   font-size: 12px;
 }
 
+/* Même corps, même couleur et même casse que la ligne de copyright. Le lien
+   reprend tout cela de son parent : la règle globale `a` (4,5vw, couleur de
+   marque) le ferait sinon plus grand et d'une autre teinte que le texte. */
+.credits {
+  margin: 4px 0 0;
+  color: $text-primary;
+  font-size: 12px;
+
+  a {
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity $transition-fast;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
 @media (max-width: $breakpoint-mobile) {
   .footer {
     padding: $spacing-md $spacing-sm;

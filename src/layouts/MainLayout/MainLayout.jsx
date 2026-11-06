@@ -12,6 +12,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import CookieNotice from "../../components/CookieNotice";
 import "./MainLayout.css";
 
 export default function MainLayout() {
@@ -37,6 +38,7 @@ export default function MainLayout() {
         <Outlet />
       </main>
       <Footer />
+      <CookieNotice />
     </>
   );
 }

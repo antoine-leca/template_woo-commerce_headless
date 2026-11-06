@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 import SocialLinks from "../../../../components/SocialLinks";
 import { useTranslation } from "react-i18next";
+import { CREDITS } from "../../../../constants/credits";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -24,6 +25,17 @@ export default function Footer() {
 
       <p className={styles.copyright}>
         {t("footer.rights", { year: new Date().getFullYear() })}
+      </p>
+
+      <p className={styles.credits}>
+        {t("footer.madeBy")}{" "}
+        {CREDITS.href ? (
+          <a href={CREDITS.href} target="_blank" rel="noopener noreferrer">
+            {CREDITS.name}
+          </a>
+        ) : (
+          CREDITS.name
+        )}
       </p>
     </footer>
   );

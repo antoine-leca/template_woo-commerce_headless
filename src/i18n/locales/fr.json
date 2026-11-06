@@ -276,7 +276,8 @@
     "wishlistRemove": "Impossible de retirer des favoris."
   },
   "footer": {
-    "rights": "© {{year}} RAVI. Tous droits réservés."
+    "rights": "© {{year}} RAVI. Tous droits réservés.",
+    "madeBy": "Réalisé par"
   },
   "header": {
     "account": "Profil ou connexion",
@@ -433,5 +434,48 @@
     "error": "Une erreur est survenue avec les favoris.",
     "remove": "Retirer des favoris",
     "title": "Mes favoris"
+  },
+  "cookieNotice": {
+    "label": "Information sur les cookies",
+    "text": "Ce site n’utilise que des cookies et un stockage strictement nécessaires à son fonctionnement (connexion, panier, paiement sécurisé). Aucun cookie publicitaire.",
+    "more": "En savoir plus",
+    "ok": "J’ai compris"
+  },
+  "sizeGuide": {
+    "open": "Guide des tailles",
+    "title": "Guide des tailles",
+    "intro": "Mesures du corps, en centimètres.",
+    "size": "Taille",
+    "chest": "Poitrine",
+    "waist": "Tour de taille",
+    "hips": "Hanches",
+    "tip": "Entre deux tailles, nous vous conseillons de choisir la plus grande. Une question ? Écrivez-nous via la page Contact.",
+    "close": "Fermer",
+    "rows": [
+      {
+        "size": "S",
+        "chest": "88–92",
+        "waist": "74–78",
+        "hips": "92–96"
+      },
+      {
+        "size": "M",
+        "chest": "96–100",
+        "waist": "82–86",
+        "hips": "98–102"
+      },
+      {
+        "size": "L",
+        "chest": "104–108",
+        "waist": "90–94",
+        "hips": "104–108"
+      },
+      {
+        "size": "XL",
+        "chest": "112–116",
+        "waist": "98–102",
+        "hips": "110–114"
+      }
+    ]
   }
 }
