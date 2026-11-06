@@ -40,6 +40,33 @@ Les champs ACF sont versionnés avec le code (ACF « Local JSON ») : le mu-plug
 `mu-plugins/acf-json-sync.php` fait écrire à ACF un fichier par groupe de champs
 dans `mu-plugins/acf-json/`.
 
+### Où modifier quoi
+
+Chaque groupe s'affiche sur la page WordPress de l'admin à laquelle il se rapporte ;
+**tous** s'affichent aussi sur **Paramètres du site** (identifiant 54, lu par
+`src/thunkActionsCreator/siteThunk.jsx`), qui sert de page centrale.
+
+| Page WordPress (*Pages*, versions FR et EN) | Groupes affichés |
+| --- | --- |
+| Mentions légales (28, 84) | Informations légales : Identité de l'entreprise, Hébergeur |
+| CGV (32, 102) | Informations légales : CGV |
+| Politique de confidentialité (72, 90) | Informations légales : Identité de l'entreprise, Confidentialité |
+| Politique des cookies (82, 92) | Informations légales : Identité de l'entreprise, Cookies |
+| Contact (37, 114) | Textes — Contact |
+| FAQ (47, 108), À propos (49, 110) | aucun : le contenu se modifie dans l'éditeur de la page |
+| Paramètres du site (54) | tout : vidéo, logo et titre de l'accueil, tous les textes, toutes les informations légales |
+
+Les pages du site sans page WordPress (accueil, catalogue, fiche produit, blog, favoris,
+page 404, invitation à se connecter, confirmation de commande, titres SEO, navigation
+et pied de page) se règlent dans les groupes « Textes — … » de **Paramètres du site**.
+
+**Une seule valeur par champ.** Les groupes « Textes — … » et « Informations légales »
+sont enregistrés sur la page 54, quelle que soit la page où on les modifie
+(`mu-plugins/acf-central-storage.php`) : l'adresse saisie sur « Mentions légales » est
+aussi celle de « Politique de confidentialité » et de leurs versions anglaises. Les
+identifiants de pages ci-dessus sont ceux de cette installation ; sur un autre site, les
+règles d'affichage des groupes (onglet *Emplacement* de chaque groupe) sont à vérifier.
+
 **Ajouter ou modifier un champ**
 
 1. Créer ou modifier le groupe dans l'admin WordPress, *Champs personnalisés*,
@@ -52,17 +79,53 @@ dans `mu-plugins/acf-json/`.
 Seule la structure des champs est versionnée ; les textes saisis restent dans la
 base de chaque site.
 
-**Afficher un nouveau champ sur le site**
+### Textes du site (groupes « Textes — … »)
 
-Un champ ACF n'atteint pas le front tout seul. Pour les réglages globaux (page
-« Paramètres du site ») :
+Chaque texte rédactionnel du site (navigation, pied de page, catalogue, libellés
+de la fiche produit, contact, blog, page 404, favoris, invitation à se connecter,
+confirmation de commande, titres et descriptions SEO) a deux champs, un par langue,
+rangés dans des onglets *Français* / *English*. Le nom d'un champ est la clé du
+dictionnaire `src/i18n/locales` :
 
-- exposer le champ dans `wp-content/mu-plugins/acf-rest-api.php`, qui énumère les
-  champs renvoyés par l'API ;
-- le lire dans `src/slices/siteSlice.jsx` (`setSiteSettings`), puis l'utiliser dans
-  le composant voulu ;
-- un texte à traduire a besoin de sa variante anglaise (champ `*_en`, comme pour
-  les produits) ; le dictionnaire du front est `src/i18n/locales`.
+`header.nav.home` en français → `txt__header__nav__home__fr`
+
+- **Champ rempli** : il remplace le texte d'origine, sans toucher au code
+  (`src/i18n/siteTexts.js` le superpose au dictionnaire).
+- **Champ vide** : le texte du dictionnaire s'affiche.
+- Un texte qui contient `{{year}}`, `{{count}}`... doit les garder tels quels :
+  ils sont remplacés automatiquement.
+- Les valeurs d'origine ont été saisies d'après les dictionnaires. Si un texte
+  est ensuite changé dans `fr.json`/`en.json` alors que son champ est rempli,
+  c'est le champ qui s'affiche.
+
+Restent dans le code, volontairement, les textes **fonctionnels** : panier,
+paiement, connexion, compte, adresses, messages d'erreur, statuts de commande,
+avis, boutons d'action et libellés d'accessibilité.
+
+**Ajouter un texte modifiable** : créer le champ dans le groupe voulu en suivant le
+nom ci-dessus (`txt__<clé avec __ à la place des points>__fr` et `__en`) ; rien
+d'autre à faire, l'API l'expose (`mu-plugins/acf-site-texts.php`) et le front le
+superpose.
+
+### Informations légales (les `[...]` des pages légales)
+
+Les mentions légales, les CGV, la politique de confidentialité et la politique des
+cookies contiennent des marqueurs à compléter (`[RAISON SOCIALE]`,
+`[Numéro TVA si applicable]`...). Au lieu de modifier ces pages, renseigner le
+groupe **Informations légales** : `mu-plugins/acf-legal-placeholders.php` remplace
+chaque marqueur par sa valeur dans le contenu renvoyé par l'API, en français comme
+en anglais.
+
+- Un champ vide laisse le marqueur visible (donc à compléter).
+- Les politiques écrivent leurs marqueurs entre doubles crochets
+  (`[[RAISON SOCIALE]]`) : les deux formes sont reconnues.
+- `[DURÉE]` apparaît deux fois dans la politique de confidentialité avec deux sens :
+  un champ par occurrence (purge des sessions, puis conservation des messages).
+- Pour un nouveau marqueur : l'ajouter dans `headless_legal_placeholders()` avec le
+  champ ACF correspondant.
+
+Le contenu des pages FAQ, À propos, Contact, etc. reste modifiable directement dans
+l'éditeur de pages WordPress ; ces pages n'ont pas de marqueurs.
 
 ## Wireframes
 

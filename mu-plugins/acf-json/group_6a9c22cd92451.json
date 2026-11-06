@@ -74,9 +74,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page",
                 "operator": "==",
-                "value": "page"
+                "value": "54"
             }
         ]
     ],
@@ -92,5 +92,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790604098
+    "modified": 1793892605
 }
