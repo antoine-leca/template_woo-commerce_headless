@@ -16,6 +16,12 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true',
     ]);
 
+    register_rest_route('custom/v1', '/products-index', [
+        'methods'             => 'GET',
+        'callback'            => 'headless_get_products_search_index',
+        'permission_callback' => '__return_true',
+    ]);
+
     register_rest_route('custom/v1', '/products/(?P<id>[\w-]+)', [
         'methods'             => 'GET',
         'callback'            => 'headless_get_single_product_with_variation_stock',
@@ -289,3 +295,63 @@ function headless_get_single_product_with_variation_stock($request)
 
     return rest_ensure_response(headless_enrich_variation_stock($store_response->get_data()));
 }
+
+/*=======================================
+ *  Index de recherche : tous les produits publies, en une seule reponse legere
+ *  (identifiant, nom, nom anglais, categories). Le front s'en sert pour une
+ *  recherche tolerante aux fautes (« tshirt » -> « T-SHIRT »), sans demander
+ *  100 produits complets a /products — dont chaque variation est enrichie une
+ *  par une, ce qui coute cher.
+ *  La reponse est mise en cache et recalculee quand un produit ou une categorie
+ *  change.
+ *  =============================================*/
+const HEADLESS_SEARCH_INDEX_TRANSIENT = 'headless_products_search_index';
+
+function headless_get_products_search_index()
+{
+    $index = get_transient(HEADLESS_SEARCH_INDEX_TRANSIENT);
+
+    if ($index === false) {
+        $ids = get_posts([
+            'post_type'      => 'product',
+            'post_status'    => 'publish',
+            'posts_per_page' => -1,
+            'fields'         => 'ids',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        ]);
+
+        // Un seul appel pour les categories de tous les produits.
+        update_object_term_cache($ids, 'product');
+
+        $index = array_map(function ($id) {
+            $categories = wp_get_post_terms($id, 'product_cat', ['fields' => 'names']);
+            $name_en    = trim(wp_strip_all_tags((string) get_post_meta($id, 'title_en', true)));
+
+            return [
+                'id'           => (int) $id,
+                'name'         => html_entity_decode(wp_strip_all_tags(get_the_title($id)), ENT_QUOTES, 'UTF-8'),
+                'translations' => $name_en !== '' ? ['en' => ['name' => $name_en]] : (object) [],
+                'categories'   => is_wp_error($categories) ? [] : array_values($categories),
+            ];
+        }, $ids);
+
+        set_transient(HEADLESS_SEARCH_INDEX_TRANSIENT, $index, HOUR_IN_SECONDS);
+    }
+
+    $response = rest_ensure_response($index);
+    // Le navigateur peut le garder quelques minutes : la liste change rarement.
+    $response->header('Cache-Control', 'public, max-age=300');
+
+    return $response;
+}
+
+function headless_flush_products_search_index()
+{
+    delete_transient(HEADLESS_SEARCH_INDEX_TRANSIENT);
+}
+add_action('save_post_product', 'headless_flush_products_search_index');
+add_action('deleted_post', 'headless_flush_products_search_index');
+add_action('trashed_post', 'headless_flush_products_search_index');
+add_action('edited_product_cat', 'headless_flush_products_search_index');
+add_action('delete_product_cat', 'headless_flush_products_search_index');
