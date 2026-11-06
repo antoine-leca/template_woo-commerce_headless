@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables" as *;
 
 /* Une rangée qui peut passer à la ligne : fermée, la loupe est à gauche des
    filtres, sur la même ligne ; ouverte, la barre sort de la loupe vers la

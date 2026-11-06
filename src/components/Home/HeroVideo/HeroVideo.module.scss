@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables" as *;
 
 // Reste dans le flux normal : il repousse le contenu suivant sans rien
 // peindre par-dessus le bleu du body pendant qu'on le traverse.

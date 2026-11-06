@@ -1,4 +1,4 @@
-@import "../../../../styles/variables.scss";
+@use "../../../../styles/variables" as *;
 
 /* La barre n'a aucun palier : tout est interpolé entre 320 px et 1280 px de
    large. Un palier laisse toujours une largeur intermédiaire mal servie. */

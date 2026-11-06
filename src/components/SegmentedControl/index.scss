@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables" as *;
 
 /* Contrôle segmenté : l'option active est remplie, les autres restent nues.
    La distinction ne repose pas sur une nuance de couleur — sur le bleu du
